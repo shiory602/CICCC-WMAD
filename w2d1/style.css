@@ -28,7 +28,7 @@ header {
 	position: fixed;
 	z-index: 2;
 	top: 0;
-	width: 100%;;
+	width: 100%;
 	background-color: #ffeaae;
 }
 
@@ -49,6 +49,11 @@ header {
 	font-family: monospace;
 }
 
+.firstParagraph {
+	display: flex;
+	align-items: center;
+}
+
 .photo {
 	border: 5px groove rgb(180, 180, 180);
 	padding: 10px;
@@ -65,9 +70,8 @@ header {
 	background-color: #ffd65c;
 }
 
-.firstParagraph {
-	display: flex;
-	align-items: center;
+#team {
+	margin: 50px auto;
 }
 
 th {
