@@ -11,7 +11,7 @@ body {
 	margin-bottom: 36px;
 }
 
-.navbar nav {
+.navbar {
 	width: 100%;
 	background-color: #e0876a;
 	margin: 0 ;
@@ -21,26 +21,26 @@ body {
 	z-index: 0;
 }
 
-.navbar nav ul {
+.navbar ul {
 	list-style: none;
 	display: flex;
 	justify-content: space-around;
 }
 
-.navbar nav ul li {
+.navbar ul li {
 	margin-right: 20px;
 }
 
-.navbar nav ul li button {
+.navbar ul li button {
 	padding: 10px 25px;
 	background-color: #f9ccac;
 }
 
-.navbar nav ul li button a {
+.navbar ul li button a {
 	color: #a2836e;
 }
 
-.navbar nav ul li button a:hover {
+.navbar ul li button a:hover {
 	color: #674d3c;
 }
 
