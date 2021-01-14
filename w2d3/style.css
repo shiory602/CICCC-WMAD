@@ -1,0 +1,100 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.content {
+	width: 80%;
+	height:1000px;
+	margin: 10px auto;
+	background-color: #ff7b25;
+	border: 5px solid #d64161;
+	border-radius: 5px;
+}
+
+.wrap {
+	width: 86%;
+	margin: auto;
+}
+
+.card {
+	width: 200px;
+	height: 200px;
+	margin: 60px;
+	display: inline-block;
+	background-color: #feb236;
+	border: 3px solid #6b5b95;
+	color: #6b5b95;
+}
+
+.card:hover {
+	cursor: pointer;
+}
+
+.one:hover {
+	transform: translateX(50px);
+}
+
+.two:hover {
+	transform: scale(2);
+}
+
+/* Use CSS to rotate your third square along the X-axis for 180deg on
+hover. */
+.three:hover {
+	transform: rotateX(180deg);
+}
+
+/* Use CSS to rotate your fourth square along the Z-axis for 180deg
+on hover. */
+.four:hover {
+	transform: rotateZ(180deg);
+}
+
+/* Use CSS to skew your fifth square along the Y-axis for 90deg on hover. */
+.five:hover {
+	transform: skewY(90deg);
+}
+
+/* Use CSS to change the color of your sixth square from a warm color
+to a cold color on hover (duration: 1s). */
+.six {
+	background-color: #d64161;
+}
+.six:hover {
+	transition: 1.0s;
+	color: #feb236;
+	background-color: #6b5b95;
+}
+
+/* Use CSS to animate your seventh square to move from 20px to
+700px along the X axis. (use @keyframes). */
+.seven:hover {
+	animation-name: sev;
+	animation-duration: 2s;
+}
+@keyframes sev {
+	30% {transform: translateX(20px);}
+	100% {transform: translateX(700px);}
+}
+
+/* Do whatever you like with the last 2 squares. */
+.eight:hover {
+	animation: eig 3s linear;
+}
+@keyframes eig {
+	30% {transform: translateX(50px);}
+	60% {transform: translateY(-50px);}
+	100% {transform: translate(-50px, 50px);}
+}
+
+.nine:hover {
+	transition-duration: 2s;
+	background-color: #d64161;
+	transform: rotate(360deg);
+}
