@@ -34,53 +34,46 @@ body{
 	color: #8CC084;
 }
 
-#title{
+.title{
 	position: relative;
 	padding: 0 16px;
-}
-
-#title img{
-	width: 100%;
-	display: block;
-	margin: auto;
-	max-height: 500px;
-	border-radius: 3%;
-}
-
-h1{
 	z-index: 1;
 	color: #968E85;
 	text-align: center;
 	font-family: monospace;
+	font-style: italic;
 	font-size: 3vw;
 	margin: 0 auto;
 	padding-top: 100px;
 }
 
-#title p {
+.property{
+	width: 90%;
 	z-index: 1;
-	position: absolute;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 10px 10px 17px -4px rgba(0,0,0,0.38);
+}
+
+.property p {
+	z-index: 1;
 	color: #968E85;
 }
 
-#title a {
+.property a {
 	color: #8CC084;
 }
-#title a:hover {
+.property a:hover {
 	background-color: #8CC084;
 	color: #C1D7AE;
-}
-
-#top {
-	z-index: 1;
-	margin: 0 auto;
-	padding: 20px;
-	padding-top: 80px;
 }
 
 
 table td {
 	border: 1px solid #8CC084;
+	height: 50px;
 }
 
 thead, tbody {
@@ -89,35 +82,32 @@ thead, tbody {
 }
 
 tbody {
-	background-color: #ecdcb0;
+	background-color: #fff;
 }
 
 .subbar {
 	z-index: 1;
-	width: 80%;
-	margin: 10px auto;
+	width: 90%;
+	margin: 50px auto;
 	padding: 20px;
 	color: #968E85;
-	font-size: 2vw;
+	font-size: 1vw;
 	border: 1px solid #fff;
 	background-color: #fff;
 	border-radius: 20px;
+	box-shadow: 10px 10px 17px -4px rgba(0,0,0,0.38);
 }
 
-ul li {
-	list-style-type: none;
+dl dt {
+	/* list-style-type: none; */
+	padding: 20px;
 }
 
-.subbar ul li a {
-	color: #8CC084;
-	padding:0
+.subbar dl dt span {
+	font-weight: bold;
+	/* color: #8CC084;
+	padding:0 */
 }
-
-.subbar ul li a:hover {
-	background-color: #8CC084;
-	color: #C1D7AE;
-}
-
 
 
 

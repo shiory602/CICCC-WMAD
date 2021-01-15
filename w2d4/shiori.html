@@ -1,3 +1,4 @@
+<!-- Shiori Suzuki / WMAD afternoon class -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,65 +21,75 @@
             
     </header>
     <section id="mainbar">
-        <div id="title">
-            <h1>Background properties</h1>
+            <h1 class="title">Background properties</h1>
+        <div class="property">
             <p>The<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background" target="_blank">background</a>shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.</p>
+            <table id="top">
+                <thead>
+                    <tr>
+                        <th width="20%">Property</th>
+                        <th width="80%">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td height="30px">background-size</td>
+                        <td>The size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.</td>
+                    </tr>
+                    <tr>
+                        <td height="30px">background-clip</td>
+                        <td>Whether an element's background extends underneath its border box, padding box, or content box.</td>
+                    </tr>
+                    <tr>
+                        <td height="30px">background-color</td>
+                        <td>The background color of an element.</td>
+                    </tr>
+                    <tr>
+                        <td height="30px">background-image</td>
+                        <td>One or more background images on an element.</td>
+                    </tr>
+                    <tr>
+                        <td height="30px">background-origin</td>
+                        <td>The background's origin: from the border start, inside the border, or inside the padding.</td>
+                    </tr>
+                    <tr>
+                        <td height="30px">background-repeat</td>
+                        <td>How background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.</td>
+                    </tr>
+                    <tr>
+                        <td height="30px">background-position</td>
+                        <td>The initial position for each background image. The position is relative to the position layer set by background-origin.</td>
+                    </tr>
+                    <tr>
+                        <td height="30px">background-attachment</td>
+                        <td>Whether a background image's position is fixed within the viewport, or scrolls with its containing block.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <table id="top">
-            <thead>
-                <tr>
-                    <th>Property</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>background-size</td>
-                    <td>The size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.</td>
-                </tr>
-                <tr>
-                    <td>background-clip</td>
-                    <td>Whether an element's background extends underneath its border box, padding box, or content box.</td>
-                </tr>
-                <tr>
-                    <td>background-color</td>
-                    <td>The background color of an element.</td>
-                </tr>
-                <tr>
-                    <td>background-image</td>
-                    <td>One or more background images on an element.</td>
-                </tr>
-                <tr>
-                    <td>background-origin</td>
-                    <td>The background's origin: from the border start, inside the border, or inside the padding.</td>
-                </tr>
-                <tr>
-                    <td>background-repeat</td>
-                    <td>How background images are repeated. A background image can be repeated along the horizontal and vertical axes, or not repeated at all.</td>
-                </tr>
-                <tr>
-                    <td>background-position</td>
-                    <td>The initial position for each background image. The position is relative to the position layer set by background-origin.</td>
-                </tr>
-                <tr>
-                    <td>background-attachment</td>
-                    <td>Whether a background image's position is fixed within the viewport, or scrolls with its containing block.</td>
-                </tr>
-            </tbody>
-        </table>
-        <h1>Property values</h1>
+        <h1 class="title">Property values</h1>
         <div class="subbar">
             <h4>background-color</h4>
-            <ul>
-                <li>Any color:
-                    <br/>The uniform color of the background. It is rendered behind any background-image that is specified, although the color will still be visible through any transparency in the image.</li>
-            </ul>
+            <dl>
+                <dt><span>color:</span>
+                    red, #ff0000, #f00, rgb(255, 0, 0), hsl(hue, saturation, lightness)
+                </dt>
+                <dd>
+                    The uniform color of the background. It is rendered behind any background-image that is specified, although the color will still be visible through any transparency in the image.
+                </dd>
+            </dl>
         </div>
         <div class="subbar">
             <h4>background-image</h4>
-            <ul>
-                <li>none: Is a keyword denoting the absence of images.</li>
-                <li>image: Is an <image> denoting the image to display. There can be several of them, separated by commas, as multiple backgrounds are supported.</li>
+            <dl>
+                <dt><span>none:</span></dt>
+                <dd>
+                    Is a keyword denoting the absence of images.
+                </dd>
+                <dt><span>image:</span> url(URL or address of the image)</dt>
+                <dd>
+                    Is an "image" denoting the image to display. There can be several of them, separated by commas, as multiple backgrounds are supported.
+                </dd>
             </ul>
         </div>
         </section>
