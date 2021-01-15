@@ -99,17 +99,12 @@ tbody {
 }
 
 dl dt {
-	/* list-style-type: none; */
 	padding: 20px;
 }
 
 .subbar dl dt span {
 	font-weight: bold;
-	/* color: #8CC084;
-	padding:0 */
 }
-
-
 
 footer{
 	background-color: #C1D7AE;
