@@ -1,3 +1,12 @@
 refferance
 https://mery.jp/
 https://medium.com/
+
+a. Why you choose that project?
+	I choose this project because I want to practice to replicate a website.
+
+b. How did you divide the work between team members?
+
+c. Show us your wireframes.
+
+d. Show us the structure of your code.

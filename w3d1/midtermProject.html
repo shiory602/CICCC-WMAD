@@ -10,15 +10,25 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
+	<script src="https://kit.fontawesome.com/27c86a747a.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 	<header class="navbar">
-		<a href="midtermProject.html"><img src="/image/logo.png" alt="logo" /> </a>
-		<input type="text" name="seach" id="seach" placeholder="Search word..." />
-		<a href="#">Sign in</a>
-		<a href="#">Sign up</a>
+		<ul class="left">
+			<li><a href="midtermProject.html"><img src="/image/logo.png" alt="logo" /></a></li>
+			<li class="last-child">
+				<input type="text" name="search" id="search" placeholder="Search word..." />
+				<a href="#"><i class="fas fa-search"></i></a>
+			</li>
+		</ul>
+		<ul class="right">
+			<li><a class="register" href="#">Sign in</a></li>
+			<li><a class="register" href="#">Sign up</a></li>
+		</ul>
 	</header>
+
 	<section class="main">
 		<h2>Trend</h2>
 		<div class="trending">
@@ -36,7 +46,7 @@
 			</div>	
 		</div>
 	</section>
-	<section class="content">
+	<section class="sub">
 		<div class="allArticle">
 			<h2>Article</h2>
 			<div class="article">
@@ -66,9 +76,9 @@
 				<li>travel</li>
 			</ul>
 		</div>
-		</section>
-		<footer>
-			<span>All Right Reserved! &copy 2021 - Powered by Shiori</span>
-		</footer>
+	</section>
+	<footer>
+		<span>All Right Reserved! &copy 2021 - Powered by Shiori</span>
+	</footer>
 	</body>
 	</html>

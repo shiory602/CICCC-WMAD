@@ -15,7 +15,7 @@ a:hover {
 	cursor: pointer;
 }
 
-.navbar, footer {
+.navbar {
 	display: flex;
 	justify-content: space-between;
 	height: 70px;
@@ -23,15 +23,104 @@ a:hover {
 	color: #FFF;
 }
 
+.navbar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar ul li {
+	display: inline-block;
+}
+
 #search {
-	padding: 0 50px 0 8px;
+	top: 20px;
+	padding: 0px 50px 0px 8px;
+	border: 1px solid gray;
 	border-radius: 3px;
 	width: 250px;
 	height: 30px;
 }
 
+.last-child {
+	position: relative;
+    top: -31px;
+    left: 17px;
+}
+
+.last-child i {
+	position: relative;
+	top: 0;
+	left: -37px;
+	background-color: #fff;
+	color: gray;
+}
+
+.register {
+	float: right;
+	margin-right: 15px;
+	font-size: 1.5em;
+	color: white;
+	text-decoration: none;
+	padding-top: 24px;
+}
+
+.content {
+	width: 30%;
+	display: inline-block;
+	margin: 0 18px;
+	background-color: white;
+	padding: 15px;
+	border: 1px solid #eee;
+	border-radius: 3px;
+}
+
+.content img {
+	width: 100%;
+}
+
+.sub {
+	padding: 16px;
+	background-color: white;
+	border: 1px solid #eee;
+	border-radius: 3px;
+}
+
+.allArticle {
+	width: 45%;
+	display: inline-block;
+	padding: 20px;
+}
+
+.article {
+	/* justify-content: space-around; */
+	overflow: hidden; 
+	 margin-top: 15px;
+}
+
+.article p {
+	/* margin-left: 90px; */
+}
+
+.article img {
+	float: left;
+}
+
 .categories {
-	font-size: 13px;
-	font-weight: 700;
-	margin-right: 5px;
+	width: 45%;
+    display: inline-block;
+    padding: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 5px;
+    /* background: red; */
+    position: sticky;
+    top: 0;
+}
+
+footer {
+	text-align: center;
+	height: 70px;
+	background-color: #F4AFAB;
+	color: #FFF;
 }
