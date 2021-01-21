@@ -11,15 +11,21 @@ body {
 	color: #666;
 }
 
+a {
+	text-decoration: none;
+	color: gray;
+}
 a:hover {
 	cursor: pointer;
+	text-decoration: underline;
 }
 
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	height: 70px;
-	background-color: #F4AFAB;
+	/* background-image: linear-gradient(#ffa6a6 0%, #F4AFAB 100%); */
+	background-color: #ffa6a6;
 	color: #FFF;
 }
 
@@ -60,7 +66,7 @@ a:hover {
 	margin-right: 18px;
 	font-size: 1.1em;
 	color: white;
-	text-decoration: none;
+	/* text-decoration: none; */
 	padding-top: 24px;
 }
 
@@ -78,15 +84,21 @@ h3, p {
 h4, h5 {
 	display: inline-block;
 	margin: 0 20px;
-	/* padding-right: 90px; */
+	font-weight: 400;
 }
 
 h4 {
 	float: left;
 }
+h4:hover {
+	font-weight: bold;
+}
 
 h5 {
 	float: right;
+}
+h5:hover {
+	font-weight: bold;
 }
 
 .trending {
@@ -122,8 +134,14 @@ h5 {
 
 .article {
 	overflow: hidden; 
-	margin-top: 15px;
+	margin: 15px 10px 10px;
+	padding-bottom: 15px;
 	border-bottom: 1px dotted #e7e7e7;
+}
+
+.article h3 {
+	font-size: 0.9em;
+	margin-left: 82px;
 }
 
 .article p {
@@ -137,22 +155,109 @@ h5 {
 .categories {
 	width: 24%;
 	display: inline-block;
-	padding: 20px;
+	padding: 20px 20px 100px;
 	margin-right: 5px;
 	border-left: 1px dotted #e7e7e7;
 	position: sticky;
 	top: 0;
-	/* background: red; */
+	vertical-align:top;
 }
 
 .categories ul {
 	list-style: none;
 }
 
+.categories li {
+	padding: 6px 16px;
+	text-transform: capitalize;
+}
+.categories li:hover {
+	background-color: rgba(230, 230, 230, 1);
+}
+
 footer {
 	text-align: center;
 	height: 70px;
-	background-color: #F4AFAB;
+	background-color: #ffa6a6;
 	color: #FFF;
 	padding-top: 28px;
+}
+
+
+
+
+/* article.html CSS below */
+
+.mainArticle {
+	width: 845px;
+	margin: 30px auto;
+	padding: 48px 80px;
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-radius: 3px;
+}
+
+.mainArticle h1, .mainArticle p {
+	text-align: center;
+}
+
+.mainArticle .icon {
+	border-radius: 50%;
+	float: left;
+	margin: 12px;
+}
+
+.mainArticle ul {
+	list-style: none;
+	display: inline-block;
+	padding: 0;
+}
+
+.mainArticle .links {
+	float: right;
+	padding-top: 28px;
+	margin-right: 12px;
+}
+
+.mainArticle .links .size {
+	font-size: 1.7em;
+	color: #F4AFAB;
+	text-shadow: 1px 1px 1px #fff;
+
+}
+
+.mainPhoto {
+	border-radius: 3px;
+	display: block;
+	margin: auto;
+}
+
+.mainArticle h2 {
+	text-align: left;
+	margin: 60px 10px 30px 0;
+	border-bottom: 3px solid #F4CBC6;
+}
+
+.mainArticle article {
+	text-align: left;
+	line-height: 1.5;
+	text-indent: 2em;
+	margin-bottom: 1.5em;
+}
+
+
+/* profile.html CSS below */
+
+.profile {
+	width: 60%;
+	text-align: center;
+	margin: 10% auto;
+}
+
+.profile img {
+	border-radius: 50%;
+}
+
+.profile p {
+	padding-bottom: 10px;
 }
