@@ -5,10 +5,10 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 12px;
+	font-size: 16px;
 	font-family: 'Courier New', Courier, monospace;
 	background-color: #F4EEA9;
-	color: #333;
+	color: #666;
 }
 
 a:hover {
@@ -34,7 +34,6 @@ a:hover {
 }
 
 #search {
-	top: 20px;
 	padding: 0px 50px 0px 8px;
 	border: 1px solid gray;
 	border-radius: 3px;
@@ -44,8 +43,8 @@ a:hover {
 
 .last-child {
 	position: relative;
-    top: -31px;
-    left: 17px;
+    top: -30px;
+    left: 24px;
 }
 
 .last-child i {
@@ -58,11 +57,40 @@ a:hover {
 
 .register {
 	float: right;
-	margin-right: 15px;
-	font-size: 1.5em;
+	margin-right: 18px;
+	font-size: 1.1em;
 	color: white;
 	text-decoration: none;
 	padding-top: 24px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-left: 40px;
+	font-weight: 700;
+}
+
+h3, p {
+	padding: 0;
+	margin: 10px 20px;
+}
+
+h4, h5 {
+	display: inline-block;
+	margin: 0 20px;
+	/* padding-right: 90px; */
+}
+
+h4 {
+	float: left;
+}
+
+h5 {
+	float: right;
+}
+
+.trending {
+	margin-bottom: 24px;
 }
 
 .content {
@@ -87,19 +115,19 @@ a:hover {
 }
 
 .allArticle {
-	width: 45%;
+	width: 72%;
 	display: inline-block;
 	padding: 20px;
 }
 
 .article {
-	/* justify-content: space-around; */
 	overflow: hidden; 
-	 margin-top: 15px;
+	margin-top: 15px;
+	border-bottom: 1px dotted #e7e7e7;
 }
 
 .article p {
-	/* margin-left: 90px; */
+	margin-left: 90px;
 }
 
 .article img {
@@ -107,15 +135,18 @@ a:hover {
 }
 
 .categories {
-	width: 45%;
-    display: inline-block;
-    padding: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-right: 5px;
-    /* background: red; */
-    position: sticky;
-    top: 0;
+	width: 24%;
+	display: inline-block;
+	padding: 20px;
+	margin-right: 5px;
+	border-left: 1px dotted #e7e7e7;
+	position: sticky;
+	top: 0;
+	/* background: red; */
+}
+
+.categories ul {
+	list-style: none;
 }
 
 footer {
@@ -123,4 +154,5 @@ footer {
 	height: 70px;
 	background-color: #F4AFAB;
 	color: #FFF;
+	padding-top: 28px;
 }
