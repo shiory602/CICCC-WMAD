@@ -18,6 +18,7 @@ a {
 a:hover {
 	cursor: pointer;
 	text-decoration: underline;
+	opacity: 0.8;
 }
 
 .navbar {
@@ -66,7 +67,6 @@ a:hover {
 	margin-right: 18px;
 	font-size: 1.1em;
 	color: white;
-	/* text-decoration: none; */
 	padding-top: 24px;
 }
 
@@ -96,9 +96,6 @@ h4:hover {
 
 h5 {
 	float: right;
-}
-h5:hover {
-	font-weight: bold;
 }
 
 .trending {
@@ -175,12 +172,19 @@ h5:hover {
 	background-color: rgba(230, 230, 230, 1);
 }
 
+.fas, .fab {
+	font-weight: 900;
+}
+
 footer {
 	text-align: center;
 	height: 70px;
 	background-color: #ffa6a6;
 	color: #FFF;
 	padding-top: 28px;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
 }
 
 
@@ -213,9 +217,13 @@ footer {
 	padding: 0;
 }
 
+.mainArticle ul li {
+	font-size: smaller;
+}
+
 .mainArticle .links {
 	float: right;
-	padding-top: 28px;
+	padding-top: 21px;
 	margin-right: 12px;
 }
 
@@ -234,7 +242,7 @@ footer {
 
 .mainArticle h2 {
 	text-align: left;
-	margin: 60px 10px 30px 0;
+	margin: 100px 10px 30px 0;
 	border-bottom: 3px solid #F4CBC6;
 }
 
@@ -242,7 +250,7 @@ footer {
 	text-align: left;
 	line-height: 1.5;
 	text-indent: 2em;
-	margin-bottom: 1.5em;
+	margin-bottom: 2.5em;
 }
 
 
@@ -250,8 +258,9 @@ footer {
 
 .profile {
 	width: 60%;
+	margin: 5% auto;
+	padding: 5%;
 	text-align: center;
-	margin: 10% auto;
 }
 
 .profile img {
@@ -260,4 +269,120 @@ footer {
 
 .profile p {
 	padding-bottom: 10px;
+}
+
+.info {
+	margin-bottom: 20px;
+}
+
+.profile span {
+	margin-right: 18px;
+}
+
+.profile h6 {
+	margin: 10px;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+/* followers.html CSS below */
+
+nav {
+	width: 100%;
+	margin: 10px auto;
+	padding: 36px 15%;
+	display: flex;
+	position: sticky;
+	top: 0;
+	vertical-align:top;
+	background-color: #F4EEA9;
+}
+
+.followers .icon {
+	border-radius: 50%;
+	float: left;
+	margin: 48px 20px 12px 22px
+}
+
+.followers ul {
+	list-style: none;
+	margin: 28px 54px;
+	padding: 0;
+}
+
+.followers ul li {
+	margin-bottom: 0;
+}
+
+.allFollower {
+	margin-bottom: 50px;
+}
+
+.follower {
+	width: 80%;
+	margin: 3px auto;
+	padding: 1px 18px;
+	background: #fff;
+}
+
+.follower .btn {
+	border: 1px solid #fff;
+	background-color: #ffa6a6;
+	color: white;
+	padding: 8px 18px;
+	border-radius: 30px;
+	float: right;
+	margin-right: -17px;
+}
+
+.follower .btn2 {
+	background-color: #F4CBC6;
+}
+
+/* signup.html CSS below */
+
+.signUp {
+	background-color: #fff;
+	width: 90%;
+	margin: 30px auto;
+	padding: 80px 25px;
+	border: #e7e7e7;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.slts {
+	display: inline-block;
+	margin-top: 50px;
+}
+.slt {
+	border: 1px solid rgb(184, 184, 184);
+	border-radius: 3px;
+	padding: 12px 56px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+.slt:hover {
+	border: 1px solid #666;
+}
+
+.check {
+	margin: 30px auto;
+}
+
+.account {
+	font-weight: bold;
+	color: #ff9d98;
+}
+
+.signUp p {
+	width: 51%;
+	margin: auto;
+}
+
+.close {
+	display: block;
+	width: 200px;
+	margin: 27px auto;
+	text-align: center;
 }
