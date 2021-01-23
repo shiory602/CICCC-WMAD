@@ -32,7 +32,7 @@ This is just my memo.
  
 * Shiroi
 * CICCC student
-* Twitter : https://twitter.com/shiory602
+* [Twitter](https://twitter.com/shiory602)
  
 # License
  
