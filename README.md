@@ -14,7 +14,7 @@ No demo
  
 # Installation
  
-Download VScode (https://code.visualstudio.com/)
+[Download VScode](https://code.visualstudio.com/)
  
 # Usage
  
