@@ -1,0 +1,5 @@
+@mixin headerStyle($h-style) {
+	height: $h-style;
+	background-color: $header-bgcolor;
+	color: $header-color;
+}

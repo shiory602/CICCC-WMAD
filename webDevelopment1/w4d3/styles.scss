@@ -1,0 +1,50 @@
+@import '_colors';
+@import '_darkmode';
+@import '_navbar';
+@import '_header';
+
+.container {
+	margin-top: 80px;
+	text-align: center;
+}
+
+header {
+	@include headerStyle(49px);
+}
+
+nav {
+	@include navbarStyle(30px);
+	background-color: $nav-bgcolor;
+	color: $nav-color;
+}
+
+section {
+	height: 400px;
+	background-color: $sec-bgcolor;
+	color: $sec-color;
+
+	h1 {
+		height: 50px;
+		background-color: $header-bgcolor;
+		color: $header-color;
+	}
+
+	article {
+	height: 300px;
+	background-color: $nav-bgcolor;
+	color: $nav-color;
+	}
+}
+
+aside {
+	height: 400px;
+	background-color: $aside-bgcolor;
+	color: $aside-color;
+}
+
+footer {
+	// height: 40px;
+	// background-color: $footer-bgcolor;
+	// color: $footer-color;
+	@include headerStyle(40px);
+} 
