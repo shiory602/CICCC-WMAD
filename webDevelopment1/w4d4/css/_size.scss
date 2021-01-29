@@ -1,0 +1,28 @@
+
+@mixin icon-format($size: 50px, $f-size: 1.5em) {
+
+	.icon {
+		width: $size;
+		border-radius: 50%;
+	}
+
+	.name {
+		font-size: $f-size;
+		font-weight: 300;
+		margin-left: 1vw;
+	}
+
+}
+
+
+@mixin align-center {
+	display: block;
+	margin: 0 auto;
+}
+
+
+@mixin fa-sizes($f-sizes: 5em, $p-top: 5vh, $p-right: 3vh) {
+	font-size: $f-sizes;
+	padding-top: $p-top;
+	padding-right: $p-right;
+}

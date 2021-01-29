@@ -1,0 +1,6 @@
+
+@mixin mq($width: 1025px) {
+	@media screen and (mim-width: $width) {
+		@content;
+	}
+}

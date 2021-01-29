@@ -1,0 +1,273 @@
+@import 'color';
+@import 'ul';
+@import 'size';
+@import 'mq';
+
+* {
+  box-sizing: border-box;
+
+  body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fraunces', serif;
+
+    // for mobile --------------------------------------------------------------------
+    // home page ------------------------------------------------------------------
+
+    .container {
+
+      header {
+
+        @include hr-func;
+
+      }
+
+      nav {
+        margin-top: 2vh;
+        @include nav-func;
+      }
+
+      section {
+        background-color: $primary-color;
+
+        article {
+          // background-color: cornsilk;
+
+          .box {
+            padding: 1vw;
+            margin: auto;
+            width: 100%;
+
+            .author {
+              @include icon-format(35px)
+            }
+
+            @include date-func(0.8em);
+          }
+
+        }
+
+      }
+
+    }
+
+    // see page ------------------------------------------------------------------
+
+    .container2 {
+      width: 80%;
+      margin: 0 auto;
+
+      header {
+
+        @include hr-func;
+        @include icon-format(40px);
+      }
+
+      .contents {
+        background-color: $primary-color;
+				padding: 15vh 0 0 12vw;
+				margin: 0 auto;
+				
+				.mainphoto {
+					width: 30vw;
+					@include align-center;
+				}
+				
+        .content {
+					@include date-func;
+          padding: 2vh 12vw 10vh 0;
+
+          .author {
+						@include icon-format($f-size: 1.2em);
+						margin: 0;
+						padding-bottom: 4vh;
+
+            .f-btn {
+              padding: 6px 26px;
+              margin-left: 2vw;
+              background: #303f4e;
+              color: #cae0ebf6;
+              border: 1px solid #598d86;
+              border-radius: 12px;
+              font-size: 1.2em;
+            }
+          }
+
+          .reply {
+            margin-left: 2vw;
+          }
+        }
+      }
+    }
+
+    // submit page ------------------------------------------------------------------
+
+		.container3 {
+
+			
+			header {
+
+				.fa-size {
+					@include fa-sizes;
+				}
+
+        @include hr-func;
+        @include icon-format(40px);
+			}
+			
+			h1 {
+				margin-top: 10vh;
+				text-align: center;
+				font-size: 4em;
+			}
+
+			.contents {
+
+				width: 80%;
+				margin: auto;
+
+				.author {
+					@include icon-format($f-size: 1.2em);
+					margin: 0;
+					padding-bottom: 4vh;
+				}
+
+				.mainphoto {
+					width: 90%;
+					margin-top: 5vh;
+					text-align: center
+				}
+
+			}
+
+			.box {
+				@include hr-func;
+				border: 5px solid $point-color;
+				width: 75%;
+				height: 15vh;
+				margin: 5vh auto;
+				padding: 2vh;
+				border-radius: 80px;
+				font-size: 3em;
+			}
+
+
+			.submit {
+				width: 75%;
+				margin: 5vh auto;
+				input {
+					width: 100%;
+					height: 16vh;
+					background-color: $point-color;
+					border: 1px solid $font-color;
+					color: $primary-color;
+					text-align: center;
+					padding: 2vh;
+					border-radius: 80px;
+					font-size: 3em;
+					line-height: 14hw;
+				}
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+    // for pc--------------------------------------------------------------------------
+    // home page ------------------------------------------------------------------
+
+    @include mq {
+
+      .container {
+
+        header {
+
+          @include hr-func;
+
+        }
+
+        nav {
+          margin-top: 2vh;
+          @include nav-func;
+        }
+
+        section {
+          background-color: $primary-color;
+
+          article {
+            // background-color: cornsilk;
+
+            .box {
+              padding: 1vw;
+              margin: auto;
+              width: 100%;
+
+              .author {
+                @include icon-format(35px)
+              }
+
+              @include date-func(0.8em);
+            }
+
+          }
+
+        }
+
+      }
+
+      // see page ------------------------------------------------------------------
+
+      .container2 {
+        width: 80%;
+        margin: 0 auto;
+
+        header {
+
+          @include hr-func;
+          @include icon-format(65px);
+        }
+
+        .contents {
+          background-color: $primary-color;
+          padding: 15vh 0 0 12vw;
+
+          .content {
+            @include date-func;
+            padding: 2vh 12vw 10vh 0;
+
+            .author {
+              @include icon-format($f-size: 1.8em);
+              margin: 3vh;
+
+              .f-btn {
+                padding: 6px 26px;
+                margin-left: 2vw;
+                background: #303f4e;
+                color: #cae0ebf6;
+                border: 1px solid #598d86;
+                border-radius: 12px;
+                font-size: 1.2em;
+              }
+            }
+
+            .reply {
+              margin-left: 2vw;
+            }
+          }
+        }
+      }
+
+      // submit page ------------------------------------------------------------------
+
+			
+
+    }
+  }
+}

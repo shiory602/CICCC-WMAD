@@ -1,0 +1,98 @@
+
+// header -----------------------------------------------------------------------
+// mobile
+@mixin hr-func($f-size: 1.5em, $f-margin: 3vw, $f-padding: 0.6vw) {
+  .left {
+    background-size: contain;
+    height: 20vh;
+    float: left;
+  }
+
+  .right {
+		// float: right;
+		@include fa-sizes($f-sizes: 6em, $p-top: 5vh, $p-right: 3vh);
+
+    ul {
+      // margin: $f-margin;
+      font-size: ($f-size);
+			list-style-type: none;
+			margin: auto;
+    	padding: 23vh 11vw 0;
+
+      li {
+        display: inline-block;
+        padding: $f-padding;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+// pc
+@mixin hr-func($f-size: 1.5em, $f-margin: 3vw, $f-padding: 0.6vw) {
+  .left {
+    background-size: contain;
+    height: 20vh;
+    float: left;
+  }
+
+  .right {
+    float: right;
+
+    ul {
+      margin: $f-margin;
+      font-size: ($f-size);
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        padding: $f-padding;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+
+// navbar -----------------------------------------------------------------------
+@mixin nav-func {
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    background: $point-color;
+    padding-top: 5vh;
+
+    li {
+      display: inline-block;
+      justify-content: space-between;
+
+      a {
+        color: $font-color;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+// date and like -------------------------------------------------------------------
+@mixin date-func ($f-size: 1em) {
+  ul {
+    font-size: $f-size;
+    list-style-type: none;
+    padding: 1vw;
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+  }
+}
