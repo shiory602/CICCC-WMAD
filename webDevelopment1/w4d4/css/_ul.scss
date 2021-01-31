@@ -28,31 +28,6 @@
   }
 }
 
-// pc
-@mixin hr-func($f-size: 1.5em, $f-margin: 3vw, $f-padding: 0.6vw) {
-  .left {
-    background-size: contain;
-    height: 20vh;
-    float: left;
-  }
-
-  .right {
-    float: right;
-
-    ul {
-      margin: $f-margin;
-      font-size: ($f-size);
-      list-style-type: none;
-
-      li {
-        display: inline-block;
-        padding: $f-padding;
-        justify-content: space-between;
-      }
-    }
-  }
-}
-
 
 // navbar -----------------------------------------------------------------------
 @mixin nav-func {

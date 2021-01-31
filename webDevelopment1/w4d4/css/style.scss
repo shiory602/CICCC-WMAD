@@ -12,7 +12,7 @@
     padding: 0;
     font-family: 'Fraunces', serif;
 
-    // for mobile --------------------------------------------------------------------
+    // for mobile portrait --------------------------------------------------------
     // home page ------------------------------------------------------------------
 
     .container {
@@ -66,22 +66,22 @@
 
       .contents {
         background-color: $primary-color;
-				padding: 15vh 0 0 12vw;
-				margin: 0 auto;
-				
-				.mainphoto {
-					width: 30vw;
-					@include align-center;
-				}
-				
+        padding: 15vh 0 0 12vw;
+        margin: 0 auto;
+
+        .mainphoto {
+          width: 30vw;
+          @include align-center;
+        }
+
         .content {
-					@include date-func;
+          @include date-func;
           padding: 2vh 12vw 10vh 0;
 
           .author {
-						@include icon-format($f-size: 1.2em);
-						margin: 0;
-						padding-bottom: 4vh;
+            @include icon-format($f-size: 1.2em);
+            margin: 0;
+            padding-bottom: 4vh;
 
             .f-btn {
               padding: 6px 26px;
@@ -103,75 +103,75 @@
 
     // submit page ------------------------------------------------------------------
 
-		.container3 {
-
+    .container3 {
+			width: 80%;
+      margin: 0 auto;
 			
-			header {
-
+      header {
+				
 				.fa-size {
 					@include fa-sizes;
-				}
-
+        }
+				
         @include hr-func;
         @include icon-format(40px);
-			}
+      }
 			
-			h1 {
+      h1 {
 				margin-top: 10vh;
+        font-size: 4em;
 				text-align: center;
-				font-size: 4em;
-			}
+      }
 
-			.contents {
+      .contents {
 
-				width: 80%;
-				margin: auto;
+        width: 80%;
+        margin: auto;
 
-				.author {
-					@include icon-format($f-size: 1.2em);
-					margin: 0;
-					padding-bottom: 4vh;
-				}
+        .author {
+          @include icon-format($f-size: 1.2em);
+          margin: 0;
+          padding-bottom: 4vh;
+        }
 
-				.mainphoto {
-					width: 90%;
-					margin-top: 5vh;
-					text-align: center
-				}
+        .mainphoto {
+          width: 100%;
+					padding: 30vw;
+          text-align: center
+        }
 
-			}
+      }
 
-			.box {
-				@include hr-func;
-				border: 5px solid $point-color;
-				width: 75%;
-				height: 15vh;
-				margin: 5vh auto;
-				padding: 2vh;
-				border-radius: 80px;
-				font-size: 3em;
-			}
-
-
-			.submit {
-				width: 75%;
-				margin: 5vh auto;
-				input {
-					width: 100%;
-					height: 16vh;
-					background-color: $point-color;
-					border: 1px solid $font-color;
-					color: $primary-color;
-					text-align: center;
-					padding: 2vh;
-					border-radius: 80px;
-					font-size: 3em;
-					line-height: 14hw;
-				}
-			}
-		}
+      .box {
+        @include hr-func;
+        border: 5px solid $point-color;
+        width: 75%;
+        height: 15vh;
+        margin: 5vh auto;
+        padding: 2vh;
+        border-radius: 80px;
+        font-size: 3em;
+      }
 
 
+      .submit {
+        width: 75%;
+        margin: 5vh auto;
+
+        input {
+          width: 100%;
+          height: 16vh;
+          background-color: $point-color;
+          border: 1px solid $font-color;
+          color: $primary-color;
+          text-align: center;
+          padding: 2vh;
+          border-radius: 80px;
+          font-size: 3em;
+          line-height: 14hw;
+        }
+      }
+    }
 
 
 
@@ -180,10 +180,14 @@
 
 
 
-    // for pc--------------------------------------------------------------------------
+
+
+    // for tablet landscape or more -----------------------------------------------
     // home page ------------------------------------------------------------------
 
     @include mq {
+    // @media screen and (min-width: 1025px) {
+
 
       .container {
 
@@ -265,9 +269,74 @@
       }
 
       // submit page ------------------------------------------------------------------
+      .container3 {
 
-			
 
+        header {
+
+          .fa-size {
+            @include fa-sizes;
+          }
+
+          @include hr-func;
+          @include icon-format(40px);
+        }
+
+        h1 {
+          margin-top: 10vh;
+          text-align: center;
+          font-size: 4em;
+        }
+
+        .contents {
+
+          width: 80%;
+          margin: auto;
+
+          .author {
+            @include icon-format($f-size: 1.2em);
+            margin: 0;
+            padding-bottom: 4vh;
+          }
+
+          .mainphoto {
+            width: 90%;
+            padding: 30vw;
+            text-align: center
+          }
+
+        }
+
+        .box {
+          @include hr-func;
+          border: 5px solid $point-color;
+          width: 75%;
+          height: 15vh;
+          margin: 5vh auto;
+          padding: 2vh;
+          border-radius: 80px;
+          font-size: 3em;
+        }
+
+
+        .submit {
+          width: 75%;
+          margin: 5vh auto;
+
+          input {
+            width: 100%;
+            height: 16vh;
+            background-color: $point-color;
+            border: 1px solid $font-color;
+            color: $primary-color;
+            text-align: center;
+            padding: 2vh;
+            border-radius: 80px;
+            font-size: 3em;
+            line-height: 14hw;
+          }
+        }
+			}
+      }
     }
   }
-}
