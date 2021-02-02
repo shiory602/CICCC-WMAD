@@ -37,17 +37,17 @@ console.log(CapitalizeString("shiori"));
 // number, the program will display a message &quot;Good Work&quot; otherwise display a message
 // &quot;Not matched&quot;.
 
-// let result4;
-// let random = Math.floor(Math.random() * 10) + 1;
-// let answer = prompt("Guess number between 1 to 10.");
+let result4;
+let random = Math.floor(Math.random() * 10) + 1;
+let answer = prompt("Guess number between 1 to 10.");
 
-// if (random == answer) {
-// 	result4 = "Good Work";
-// } else {
-// 	result4 = "Not matched"
-// }
+if (random == answer) {
+	result4 = "Good Work";
+} else {
+	result4 = "Not matched"
+}
 
-// console.log(result4);
+console.log(result4);
 
 
 
