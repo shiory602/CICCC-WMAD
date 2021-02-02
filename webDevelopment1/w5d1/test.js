@@ -1,8 +1,21 @@
 // Shiori Suzuki / WMAD afternoon class
+
 // 1) Write a JavaScript program to find the area of a triangle where lengths of the three of its
 // sides are 5, 6, 7.
+let result = function (w, h, b) {
+	return (w * w) + (h * h) + (b * b);
+}
+console.log(result(5, 6, 7));
+
 // 2) Write a JavaScript program to compute the sum of cubes of all integer from 1 to a given
 // integer.
+
+let cubeLength = 4;
+let result2 = 0;
+for (let i = 1; i <= cubeLength; i++) {
+	result2 += (i * i * i);
+}
+console.log(result2);
 
 
 
@@ -13,8 +26,8 @@ function CapitalizeString(string) {
 	return string.toUpperCase();
 }
 
-var result = CapitalizeString("shiori suzuki");
-console.log(result);
+var result3 = CapitalizeString("shiori suzuki");
+console.log(result3);
 console.log(CapitalizeString("shiori"));
 
 
@@ -121,14 +134,6 @@ let customer9 = {
 	},
 };
 
-let result9 = function (amount) {
 	for (let i = 0; i < customer9.client.order.length; i++) {
-		if (customer9.client[i].order > amount) {
-			amount = customer9.client[i].order;
-		} else {
-			return amount;
-		}
+		console.log(customer9.client.order[i].sort());
 	}
-}
-
-console.log(result9(0));
