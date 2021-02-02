@@ -37,17 +37,44 @@ console.log(CapitalizeString("shiori"));
 // number, the program will display a message &quot;Good Work&quot; otherwise display a message
 // &quot;Not matched&quot;.
 
-let result4;
-let random = Math.floor(Math.random() * 10) + 1;
-let answer = prompt("Guess number between 1 to 10.");
-
-if (random == answer) {
-	result4 = "Good Work";
-} else {
-	result4 = "Not matched"
+// Solution................................................
+// Create the function
+function GuessNumber(UserNumber) {
+	console.log("Please input a number between 1 and 10 and try guess the special number");
+	// Check if the number is a valid number.
+	if (UserNumber < 1 || UserNumber > 10) {
+		return "This is a invalid number. Please try again.";
+	} else {
+		// Create the randomic number
+		var rightNumber = Math.floor(Math.random() * 10) + 1;
+		// Checking the randomic number never will be 0
+		while (rightNumber == 0) {
+			rightNumber = Math.floor(Math.random() * 11);
+			rightNumber = Math.floor(Math.random() * 10 + 1);
+		}
+		// Checking if the numbers will match
+		if(rightNumber === UserNumber) {
+			return "This is the right number. Good Job :)";
+		} else {
+			return "This is wrong number. Don't be sad :) Please try again!";
+		}
+	}
 }
+// Call the function or run the function
+console.log(GuessNumber(5));
 
-console.log(result4);
+// My solution............................................
+// let result4;
+// let random = Math.floor(Math.random() * 10) + 1;
+// let answer = prompt("Guess number between 1 to 10.");
+
+// if (random == answer) {
+// 	result4 = "Good Work";
+// } else {
+// 	result4 = "Not matched"
+// }
+
+// console.log(result4);
 
 
 
