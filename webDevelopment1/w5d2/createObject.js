@@ -30,25 +30,26 @@ let meal = {
 
 let table = document.createElement('table');
 
-for (let j = 0; j <= meal.length; j++) {
-	let tr = document.createElement('tr');
-// let tr = document.createElement('tr');
-	for (let i = 0; i < title.length; i++) {
-		let th = document.createElement('th');
-		th.innerHTML = title[i];
-		tr.appendChild(th);
-	}
-// table.appendChild(tr);
-// document.getElementById('solution').appendChild(table);
-
-	for (let k = 0; k < meal[j].length; k++) {
-		let td = document.createElement('td');
-		td.innerHTML = meal[j][k];
-		tr.appendChild(td);
-	}	
-	table.appendChild(tr);
-	table.insertBefore(tr, null);
+let tr = document.createElement('tr');
+for (let i = 0; i < title.length; i++) {
+	let th = document.createElement('th');
+	th.innerHTML = title[i];
+	tr.appendChild(th);
 }
+table.appendChild(tr);
+document.getElementById('solution').appendChild(table);
+
+
+// for (let j = 0; j < meal.length; j++) {
+// 	let tr = document.createElement('tr');
+// 	for (let k = 0; k < meal[j].length; k++) {
+// 		let td = document.createElement('td');
+// 		td.innerHTML = meal[j][k];
+// 		tr.appendChild(td);
+// 	}	
+// 	table.appendChild(tr);
+// 	table.insertBefore(tr, null);
+// }
 
 document.getElementById('solution').appendChild(table);
 
