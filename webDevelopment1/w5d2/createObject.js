@@ -3,22 +3,20 @@
 // 1) Create an array of ‘meal’ objects, where each meal object consists of “name”, “prince”
 // and “popularity” fields. Your array should of size 3 at least.
 
-let title = ["Name", "Price", "Popularity"];
-
 let meal = {
-	pizza: {
+	pizza = {
 		name: "pizza",
 		price: 14,
 		popularity: "high",
 	},
 
-	hamburger: {
+	hamburger = {
 		name: "Humburger",
 		price: 8,
 		popularity: "high",
 	},
 
-	coke: {
+	coke = {
 		name: "Coke",
 		price: 5,
 		popularity: "low"
@@ -28,28 +26,37 @@ let meal = {
 // 2) Using JavaScript, dynamically create a HTML table to display the contents of your array
 // as follows:
 
-let table = document.createElement('table');
+function convertKeys(object) {
+	let arr = Object.keys(object);
+	return arr;
+}
+function convertValues(object) {
+	let arr = Object.values(object);
+	return arr;
+}
+// console.log(convertKeys(meal[0]));
 
+let table = document.createElement('table');
 let tr = document.createElement('tr');
-for (let i = 0; i < title.length; i++) {
+for (let i = 0; i < meal.length; i++) {
 	let th = document.createElement('th');
-	th.innerHTML = title[i];
+	th.innerHTML = convertKeys(meal.pizza[i]);
 	tr.appendChild(th);
 }
 table.appendChild(tr);
 document.getElementById('solution').appendChild(table);
 
 
-// for (let j = 0; j < meal.length; j++) {
-// 	let tr = document.createElement('tr');
-// 	for (let k = 0; k < meal[j].length; k++) {
-// 		let td = document.createElement('td');
-// 		td.innerHTML = meal[j][k];
-// 		tr.appendChild(td);
-// 	}	
-// 	table.appendChild(tr);
-// 	table.insertBefore(tr, null);
-// }
+for (let j = 0; j < meal.length; j++) {
+	let tr = document.createElement('tr');
+	for (let k = 0; k < meal[j].length; k++) {
+		let td = document.createElement('td');
+		td.innerHTML = convertValues(meal[k]);
+		tr.appendChild(td);
+	}	
+	table.appendChild(tr);
+	table.insertBefore(tr, null);
+}
 
 document.getElementById('solution').appendChild(table);
 
