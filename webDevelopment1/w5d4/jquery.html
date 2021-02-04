@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+
+		$(document).ready(function() {
+			function currentHeightWindow() {
+				var currentWidth = $(window).width();
+				return currentWidth;
+			}
+
+			// CSS with jQuery
+			$("#city").css("height", currentWidth);
+		)}
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
