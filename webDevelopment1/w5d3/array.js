@@ -17,3 +17,13 @@ arr1.shift(5);
 
 console.log(arr1);
 
+
+// toArray({ a: 1, b: 2 }) → [["a":, 1], [&wuot;b&quot;, 2]]
+
+// object.entries → return key and value
+
+// object.values → return value
+
+// object.keys → return key
+
+// numbers.push(num * (i + 1));
