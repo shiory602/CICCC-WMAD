@@ -3,25 +3,25 @@
 // 1) Create an array of ‘meal’ objects, where each meal object consists of “name”, “prince”
 // and “popularity” fields. Your array should of size 3 at least.
 
-let meal = {
-	pizza = {
+let meal = [
+	{
 		name: "pizza",
 		price: 14,
 		popularity: "high",
 	},
 
-	hamburger = {
+	{
 		name: "Humburger",
 		price: 8,
 		popularity: "high",
 	},
 
-	coke = {
+	{
 		name: "Coke",
 		price: 5,
 		popularity: "low"
 	}
-}
+];
 
 // 2) Using JavaScript, dynamically create a HTML table to display the contents of your array
 // as follows:
@@ -38,24 +38,31 @@ function convertValues(object) {
 
 let table = document.createElement('table');
 let tr = document.createElement('tr');
-for (let i = 0; i < meal.length; i++) {
+let keys = convertKeys(meal[0]);
+for (let i = 0; i < keys.length; i++) {
 	let th = document.createElement('th');
-	th.innerHTML = convertKeys(meal.pizza[i]);
+	th.textContent = keys[i];
 	tr.appendChild(th);
 }
+// for (let i = 0; i < meal.length; i++) {
+// 	let th = document.createElement('th');
+// 	th.innerHTML = convertKeys(meal.pizza[i]);
+// 	tr.appendChild(th);
+// }
 table.appendChild(tr);
-document.getElementById('solution').appendChild(table);
 
 
 for (let j = 0; j < meal.length; j++) {
+	let values = convertValues(meal[j]);
 	let tr = document.createElement('tr');
-	for (let k = 0; k < meal[j].length; k++) {
+	for (let k = 0; k < values.length; k++) {
 		let td = document.createElement('td');
-		td.innerHTML = convertValues(meal[k]);
+		td.textContent = values[k];
+		// td.textContent = convertValues(meal[j])[k];
 		tr.appendChild(td);
 	}	
 	table.appendChild(tr);
-	table.insertBefore(tr, null);
+	// table.insertBefore(tr, null);
 }
 
 document.getElementById('solution').appendChild(table);
