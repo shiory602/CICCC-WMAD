@@ -6,13 +6,13 @@
 // ● Return 0 if given an empty array.
 // ● All array items are of the type bool (true or false).
 
-// 1.配列内の値を判定する
-// 2.trueだったらカウントに１を足す
+// 1.declare a variable and set count 0
+// 2.loop through the array and count it if element = true -> for(let element of arr) {if(element === true) {num++;}}
 
 function countTrue (arr) {
-	var num = 0;
-	for (let i = 0; i < arr.length; i++) {
-		if(arr[i] == true) {
+	var num = 0; // 1
+	for (let i of arr) {
+		if(i == true) {
 			num++;
 		}
 	}

@@ -7,17 +7,18 @@
 // NOTE:
 // The secret society's name should be entirely uppercased.
 
-// 1.頭文字を抜き出すcharAt()
-// 2.アルファベット順に表示 sort()
-// 3.大文字に変換 toUpperCase()
+// 1.loop through the array -> for(let variable of iterable) = for (let i = 0; i < iterable.length; i++)
+// 2.get the first letter of each element -> string.charAt(index)
+// 3.add each element into the array -> array.push(element)
+// 4.sort them in alphabetical order & convert the array into one string -> array.sort().join('') mean no space
 
+// 
 function societyName (arr) {
-	var result = [];
-	for (let i = 0; i < arr.length; i++) {
-		result.push(arr[i].charAt(0));
+	var caps = [];
+	for (let el of arr) { // 1
+		caps.push(el.charAt(0)); // 2,3
 	}
-	result.sort();
-	return result.join();
+	return caps.sort().join(''); // 4
 }
 
 console.log(societyName(["Adam", "Sarah", "Malcolm"]));
