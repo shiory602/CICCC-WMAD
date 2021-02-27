@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+:root {
+	--lightPink: rgb(255, 144, 205);
+	--whiteColor: #f5f5f5;
+	--blackColor: #333333;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+.container {
+	background: var(--lightPink);
+	width: 70vw;
+	height: 70vh;
+	margin: 10vh auto;
+	padding: 10vh;
+}
+
+.form-section {
+	background: var(--whiteColor);
+	color: var(--blackColor);
+	height: 50vh;
+	text-align: center;
+	padding: 10vh;
+}
+
+.btn {
+	margin: 5vh;
+	background: var(--lightPink);
+}
