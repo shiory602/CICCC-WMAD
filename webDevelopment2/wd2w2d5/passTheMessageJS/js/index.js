@@ -3,22 +3,18 @@ let inputMessage = document.getElementById("inputMessage");
 let containerMessage = document.getElementById("showMessage");
 let triggerButton = document.getElementById("submit");
 
-//crete the function that will get the value from input and append on html element
+//crete the function that will get the value from input and append it to the html element
 const showMessageFunc = () => {
 
-	let selectedText = inputMessage.value; //grab the value from input
-
-	// 1) We need to clean the input
-	document.getElementById("form").reset();
-	// 2) Check if the input is empty how? if(selectedText === " ") ...
-	if(selectedText === "") {
+	let selectedText = inputMessage.value; 			//grab the value from input
+	document.getElementById("form").reset();		// clean the input
+	if(selectedText === "") {										// Check if the input is empty
 		containerMessage.innerHTML = "Please fill out the form :)";
-		// document.getElementById("errorMessage").style.display = "inherit";
 		setTimeout(() => {
 			containerMessage.innerHTML = "Last Message Delivered."
 		}, 2000);
 	} else {
-		containerMessage.innerHTML = selectedText;//append the value in HTML element
+		containerMessage.innerHTML = selectedText;	//append the value in HTML element
 		setTimeout(() => {
 			containerMessage.innerHTML = "Last Message Delivered."
 		}, 2000);
