@@ -1,0 +1,56 @@
+1. What are promises?
+	Promises is the object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+	A callback is a function that is passed to another function, and it would be callback hell. You can use promises to resolve it.
+
+2. What are the 2 parameters inside the callback functions that the promise returns?
+	first parameter => resolve
+	second parameter => reject
+
+3. How do you use promises?
+	There is 2 ways to use promises.
+	i. Using then() (or Promise Chains)
+		Everything inside the "then" callback happens when the promise is resolved!
+		The second .then() will NOT execute until first one is done 
+	ii. Using async/await(ES8) ... cleaner
+		When you use await, you must put the async text on the front of the function you're using. The second await will NOT execute until the first one is done.
+
+4. What is the difference between asynchronous and synchronous?
+	Asynchronous is faster than Synchronous because every console is executed at the same time.
+
+5. How do we catch errors for promises?
+	.then()
+		Add a .catch(error){} in the back
+	async/await
+		Use a try{}catch(error){} to catch the errors
+
+6. How do you write a try-catch block?
+	try {
+		console.log("2nd success!");
+		throw "err";
+	} catch (error) {
+		console.log("err inside trycatchTwo", error);
+	}
+
+7. Try to convert from .then() => async await
+	.then() -----------------------------------------
+		function printAll() {
+			printString("A")
+			.then(() => {
+				return printString("B")
+			})
+			.then(()=> {
+				return printString("C")
+			)}
+		}
+		printAll()
+	async await -------------------------------------
+		async function printAll(){
+			await printString("A")
+			await printString("B")
+			await printString("C")
+		}
+
+
+8. Give me 2 examples in a project when you want to use promises
+	>Do async functions inside our project.
+	>Resolve callback hell

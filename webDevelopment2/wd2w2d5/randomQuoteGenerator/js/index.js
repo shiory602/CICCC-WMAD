@@ -26,8 +26,8 @@ let showAuthor = document.getElementById("showAuthor");
 // Create the function that will get the value from the array, and append it to the HTML element
 const showMessageFunc = () => {
 	let randomNumber = Math.floor(Math.random() * (QUOTES.length));
-showMessage.innerHTML = QUOTES[randomNumber].quote;
-showAuthor.innerHTML = QUOTES[randomNumber].author;
+	showMessage.innerHTML = QUOTES[randomNumber].quote;
+	showAuthor.innerHTML = QUOTES[randomNumber].author;
 }
 
 
