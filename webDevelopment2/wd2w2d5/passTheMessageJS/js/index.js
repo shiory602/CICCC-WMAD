@@ -25,4 +25,4 @@ const showMessageFunc = () => {
 //Call the function when button is clicked
 triggerButton.addEventListener("click", ()=> {
 	showMessageFunc();
-})
+});

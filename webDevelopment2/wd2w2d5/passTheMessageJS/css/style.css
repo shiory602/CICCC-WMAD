@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 :root {
-  --lightPink: rgb(255, 144, 205);
+  --lightPink: #ff90cd;
   --whiteColor: #f5f5f5;
   --blackColor: #333333;
 }
@@ -29,4 +29,3 @@ body {
   margin: 5vh;
   background: var(--lightPink);
 }
-/*# sourceMappingURL=style.css.map */
