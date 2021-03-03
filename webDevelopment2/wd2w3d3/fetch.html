@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch</title>
+	<style>
+		.user {
+			border: solid 1px lightgray;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="form-list">
+			<form id="form">
+				<input type="text" id="inputMessage"/>
+				<input type="button" value="triggerButton" id="triggerButton"/>
+			</form>
+			<div class="form-list-data">
+				<div id="users"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		// get element IDs and defined
+		let inputMessage = document.getElementById('inputMessage');
+		let triggerButton = document.getElementById('triggerButton');
+		let users = document.getElementById('users');
+
+		// import data from json and append it
+		fetch(`https://jsonplaceholder.typicode.com/users`).then(response => {
+			return response.json();
+		}).then(data => {
+			let htmlList = data.map(user => {
+				let html = `
+					<div class="user">
+						<div>Name: ${user.name}</div>
+						<div>User name: ${user.username}</div>
+						<div>Email: ${user.email}</div>
+						<div>Address: ${user.address.street}</div>
+					</div>
+				`;
+				return html;
+				// html += user.name;
+				// html += user.username;
+				// html += user.email;
+				// html += user.address.street;
+				// return html
+			})
+			users.innerHTML = htmlList.join('');
+		}).catch(err => {
+			console.log(`We have ${err}`)
+		});
+	</script>
+</body>
+</html>
