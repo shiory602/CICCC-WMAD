@@ -28,3 +28,36 @@ getNumber(3).then(function(result) {
 	// 3未満の場合はrejectが呼び出され、"Falied!"のメッセージが表示される
 	console.log(err);
 });
+
+
+
+
+// Promiseとは。。。
+
+// promiseを返す何か
+function callBackLater(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(), ms);
+  });
+}
+​
+// then 使う版
+function runWithPromise() {
+  const p = callBackLater();
+  p.then((result) => {
+    console.log(result);
+  });
+}
+​
+// async/await 使う版（一度promiseオブジェクトを受け取る書き方）
+async function runAsync() {
+  const p = callBackLater();
+  const result = await p;
+  console.log(result);
+}
+​
+// async/await 使う版（普通の書き方）
+async function runAsync() {
+  const result = await callBackLater();
+  console.log(result);
+
