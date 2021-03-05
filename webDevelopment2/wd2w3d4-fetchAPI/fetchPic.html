@@ -20,45 +20,31 @@
 			padding-bottom: 5vh;
 		}
 		ul {
+			border: 1px solid lightgray;
 			list-style: none;
 			width: 600px;
 			margin: auto;
 			text-align: left;
 		}
+		li {
+			margin: 1.2rem;
+		}
 	</style>
 	<!-- JS -->
 	<script>
 
-// const CreatePage1 = id => {
-// 	fetch(`https://jsonplaceholder.typicode.com/photos${id ? `/${id}` : ""}?_limit=20`).then(response => {
-// 		// fetch する以前にエラーがないかを確認する
-// 		if(response.status !== 200) {
-// 			console.log(`we have a error ${response.status}`)
-// 			return;
-// 		}
-
-// 		response.json().then(data => {
-// 			console.log(data);
-// 		}).catch(err => {
-// 			console.log(`we still have a error ${err}`)
-// 		})
-// 	}) 
-// }
-
-// CreatePage1(3)
-
 const CreatePage = id => {
 	fetch(`https://jsonplaceholder.typicode.com/photos${id ? `/${id}` : ""}?_limit=20`).then(response => {
+		// check if you don't have any error before execute fetch
 		if (response.status !== 200) {
 			console.log(`Oops! we have an error ${response.status}`);
 			return;
 		}
-
+		// read data and then 
 		response.json().then(users => {
-			let items = $(".items");
-		
+			let items = $(".items"); // get items class from HTML
 			if(!Array.isArray(users)) users = [users]; //check if the data is array, if is not, convert to array.
-			for(let user of users) {
+			for(let user of users) { //loop all data in users
 				let albumId = user.albumId;
 				let id = user.id;
 				let title = user.title;
@@ -70,7 +56,7 @@ const CreatePage = id => {
 					<li>Id: ${id}</li>
 					<li>Title: ${title}</li>
 					<li>
-						<img src="${url}" alt="${title}" width="600" height="600">
+						<img src="${url}" alt="${title}" width="500" height="500">
 					</li>
 					<li>
 						<img src="${thumbnailUrl}" alt="${title}" width="150" height="150">
@@ -83,18 +69,17 @@ const CreatePage = id => {
 	})
 }
 
-	$( document ).ready(() => {
+	$( document ).ready(() => { // = $(window).on("load", function() {...}) load the webpage
 		CreatePage();
 
 		let searchButton = $("#search");
 		searchButton.on("click", e => {
 			e.preventDefault(); // remove the default
 			$(".items").empty(); // preventing refresh the page
-			let getNumber = $("#getNumber").val();
+			let getNumber = $("#getNumber").val(); //get the value which is submitted
 			CreatePage(getNumber);
 		})
 	});
-				
 
 	</script>
 </head>
