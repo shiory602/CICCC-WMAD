@@ -75,8 +75,8 @@ const CreatePage = id => {
 
 		let searchButton = $("#search");
 		searchButton.on("click", e => {
-			// e.preventDefault(); // remove the default (btn not have default so no need)
-			$(".items").empty(); // preventing refresh the page
+			// e.preventDefault(); // preventing refresh the page
+			$(".items").empty(); // remove the default (btn not have default so no need)
 			let getNumber = $("#getNumber").val(); //get the value which is submitted
 			CreatePage(getNumber);
 		})
