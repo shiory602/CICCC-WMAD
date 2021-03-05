@@ -18,12 +18,13 @@
 			border-bottom: 1px solid lightgray;
 			line-height: 1.5rem;
 			padding-bottom: 5vh;
+			margin-bottom: 5vh;
 		}
 		ul {
 			border: 1px solid lightgray;
 			list-style: none;
 			width: 600px;
-			margin: auto;
+			margin: 3vh auto;
 			text-align: left;
 		}
 		li {
@@ -74,7 +75,7 @@ const CreatePage = id => {
 
 		let searchButton = $("#search");
 		searchButton.on("click", e => {
-			e.preventDefault(); // remove the default
+			// e.preventDefault(); // remove the default (btn not have default so no need)
 			$(".items").empty(); // preventing refresh the page
 			let getNumber = $("#getNumber").val(); //get the value which is submitted
 			CreatePage(getNumber);
