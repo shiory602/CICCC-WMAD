@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	margin: 60px auto;
+	text-align: center;
+}
+
+button {
+	background-color: pink;
+	margin: 20px;
+	padding: 10px 20px;
+	border: 1px solid lightPink;
+}
+
+.list {
+	width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.list-item {
+	width: 300px;
+	height: 300px;
+	margin: 10px;
+	padding: 10px;
+	background-color: papayawhip;
+	line-height: 45px;
+	text-align: center;
+}
+
+.items {
+	text-align: left;
+}
