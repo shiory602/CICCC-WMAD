@@ -38,6 +38,7 @@ button:hover {
 	background-color: papayawhip;
 	line-height: 45px;
 	text-align: center;
+	display: inline-block;
 }
 
 h6 {
