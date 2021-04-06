@@ -117,7 +117,7 @@ Expected answer is
 15. What is the difference between JSON and JavaScript object?
 
     - Objects and Arrays
-      Property names must be double-quoted strings in JSON.
+      Property names must be double-quoted strings in JSON. Trailing commas are forbidden.
     - Numbers
       Leading zeros are prohibited. A decimal point must be followed by at least one digit. NaN and Infinity are unsupported.
 
