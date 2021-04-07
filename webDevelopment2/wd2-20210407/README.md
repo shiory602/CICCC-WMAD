@@ -195,6 +195,6 @@ Which kind of loop would you use?
 Answer:
 A `do...while` statement
 
-5.What is the general purpose of a loop?
+5. What is the general purpose of a loop?
 Answer:
 Loops automatically iterate a block of code based on conditions.
