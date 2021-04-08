@@ -6,3 +6,18 @@ function scaryClown(isScary) {
         isScary ? resolve('🤡') : reject('Not scary');
     });
 }
+
+scaryClown().then(() => {
+    resolve('🤡');
+}).catch(() => {
+    reject('Not scary');
+});
+
+async function scaryClown() {
+    try {
+        const isScary = await resolve('🤡');
+        console.log(isScary);
+    } catch(error) {
+        reject('Not scary');
+    }
+} 
