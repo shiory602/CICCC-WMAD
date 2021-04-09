@@ -1,38 +1,30 @@
 // Catch this promise in both .then() way and async await way.
 // Console.log() the result or error of this promise. Either the result should give me console
 
+
+// Create the function that will return a promise
 function scaryClown(isScary) {
     return new Promise((resolve, reject) => {
         isScary ? resolve('🤡') : reject('Not scary');
     });
 }
 
-// let isScary = true;
-// scaryClown(isScary).then(resolve => console.log(resolve))
-// .catch(reject => console.log(reject));
-
-scaryClown().then(() => {
-        resolve('🤡');
+// .then
+let isScary = true; // Use the promise
+scaryClown(isScary).then(response => {
+        console.log(response);
     })
-    .catch(() => {
-        reject('Not scary');
+    .catch(error => {
+        console.log(error)
     });
 
-// async function main(){
-//     try{
-//          var clown = await scaryClown(isScary);
-//         console.log(await scaryClown(isScary));
-//     }catch(error){
-//         console.log(error);
-//     }
-// }
-// main();
-
-async function scaryClown() {
+// async/await
+async function isClownScare() {
     try {
-        const isScary = await resolve('🤡');
-        console.log(isScary);
-    } catch (error) {
-        reject('Not scary');
+        const res = await scaryClown(true);
+        console.log(res);
+    } catch (err) {
+        console.log(err);
     }
 }
+isClownScare();

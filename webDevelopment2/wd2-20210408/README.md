@@ -1,6 +1,16 @@
 # Javascript Recap
 
 ## Promise
+- An **object** which returns some information if the condition in the callback is fulfilled or rejected
+- `.then` method and `async/await` is to handle the promises synchronously.
+- promise vs async/await --> the only difference is the **syntax** (how pretty we want our code to be), but both do the exact same thing behind the scenes.
+
+JS is by default, kind of **asynchronous** (do stuff at the same time), there are times when we want it not to be doing stuff at the same time. so the solution is **callbacks** (old method), or **promise** (newer method), **async/await** (newest method).
+Most other languages are **synchronous**, but JS likes to do things at the same time (asynchronous).
+
+- Synchronous code is executed in sequence – each statement waits for the previous statement to finish before executing.
+- Asynchronous code doesn't have to wait – your program can continue to run.
+
 
 1. What is the value of the argument that is passed to the `onReject()`?
 ```JS
@@ -105,10 +115,19 @@ const example = new Promise( ??? );
 ```
 Answer:
 ```JS
-2
+1 // one argument(callback) with two parameters(resolve, reject)
 ```
+### Tips
+A Promise object is created using the new keyword and its constructor. This constructor takes a function, called the "executor function", as its parameter. This function should take two functions as parameters.
+
 
 8. Which one of the following is NOT a state that a Promise resolves to?
+```JS
+Fulfilled // finished
+Undefined // not state
+Pending // while you are waiting
+Rejected // have a problem
+```
 Answer:
 ```JS
 Rejected
