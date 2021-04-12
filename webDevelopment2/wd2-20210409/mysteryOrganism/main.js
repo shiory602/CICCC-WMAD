@@ -49,13 +49,13 @@ With the factory function set up, your team requests that you create 30 instance
 */
 
 
-// Returns a random DNA base
+// Returns a random DNA base ... 'A', 'T', 'C' or 'G'
 const returnRandBase = () => {
     const dnaBases = ['A', 'T', 'C', 'G'];
     return dnaBases[Math.floor(Math.random() * 4)];
 };
 
-// Returns a random single stand of DNA containing 15 bases
+// Returns a random single stand of DNA containing 15 bases ... eg.['C', 'C', 'G', 'D', 'A', 'G', 'D', 'C', 'G', 'D', 'C', 'G', 'D', 'C', 'G']
 const mockUpStrand = () => {
     const newStrand = [];
     for (let i = 0; i < 15; i++) {
@@ -65,39 +65,61 @@ const mockUpStrand = () => {
 };
 
 // create multiple objects
-const pAequorFactory = (num, arr) => {
-    const obj = {
-        specimenNum: num,
-        dna: arr,
+const pAequorFactory = (num, strandDnaBaseArr) => {
+    let obj = {
+        specimenNum: num, // number (no two organisms should have the same number)
+        dna: strandDnaBaseArr, // 15 DNA bases
 
-        // 指定したランダムの値を配列から削除する
+        // 15個あるDNAが突然変異する
+        // 1. objのdnaプロパティにある塩基をランダムに選択
+        // 2. 現在の塩基を別の塩基に変更する（AだったとしたらTCGのどれか）
+        // 3. objのdnaを返す
         mutate: function () {
-            return arr.filter(n => n !== returnRandBase());
+            const dnaBases = ['A', 'T', 'C', 'G'];
+            const dnaIndex = Math.floor(Math.random() * this.specimenNum); // 1. 0 ~ 14 のランダムの数字を作る
+            let targetDna = this.dna[dnaIndex]; // 'A', 'T', 'C' or 'G'
+            let dnaBaseIndex = dnaBases.indexOf(targetDna)
+            let randomIndex = Math.floor(Math.random() * 3); // 0〜2のランダムの数字を作る
+            if(randomIndex === dnaBaseIndex) {
+                randomIndex = Math.floor(Math.random() * 4);
+            }
+            targetDna = dnaBases[randomIndex];
+            return this.dna;
         },
 
         // 何パーセントの確率で一致しているか
         compareDNA: function (dnaData) {
             if (!Array.isArray(this.dna)) return false;
             if (!Array.isArray(dnaData)) return false;
-            // if (this.specimenNum != dnaData.length) return false;
-            let n;
+            let n = 0;
             for (let i = 0; i < this.specimenNum; ++i) {
-                if (this.dna[i] !== dnaData[i]) return false;
-                    n++;
+                if (this.dna[i] === dnaData[i]) n++;
             }
+            let percentage = n / this.specimenNum * 100;
             console.log(`specimen #1 and specimen #2 have ${n / this.specimenNum * 100}% DNA in common.`);
             return true;
         },
 
         // 生存率の高さ
-        willLikelySurvive: function(dnaData) {
-            const percentage = dnaData.filter(n => n === 'C' || n === 'G').length / dnaData.length * 100;
-            if (percentage > 60) return true; // 60% of C or G
-            return false;
+        willLikelySurvive: function() {
+            let result = this.dna.filter(n => n === 'C' || n === 'G').length / 15;
+            return result >= 0.6 ? true : false;// 60% of C or G
         },
     }
-
-    return obj.mutate();
+    return obj;
 }
 
-pAequorFactory(4, ['C', 'A', 'T', 'D']);
+// create 30 instances of pAequor that can survive in their natural environment
+const pAequorSurvive = [];
+let specimenNum = 1;
+while(pAequorSurvive.length < 30) {
+    let instance = pAequorFactory(specimenNum, mockUpStrand());
+
+    let canSurvive = instance.willLikelySurvive();
+    if(canSurvive) {
+        pAequorSurvive.push(instance);
+        specimenNum++;
+    }
+};
+
+console.log(pAequorSurvive);
