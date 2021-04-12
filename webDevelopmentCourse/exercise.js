@@ -15,6 +15,10 @@ let spaceship = {
     flightPath: ['Venus', 'Mars', 'Saturn']
 };
 
+let crewCount = spaceship.numCrew; // 1
+let planetArray = spaceship.flightPath; // 2
+// console.log(crewCount, planetArray);
+
 
 //*******************************************************
 // EXERCISE NUMBER 2
@@ -34,6 +38,9 @@ let propName = 'Active Mission';
 //Create a variable isActive and assign the spaceship‘s 'Active Mission' property to it.
 //2)Using bracket notation and the propName variable provided, console.log() the value of the 'Active Mission' property.
 
+let isActive = spaceship['Active Mission']; // 1
+console.log(spaceship['propName']) // 2
+// console.log(isActive);
 
 //*******************************************************
 // EXERCISE NUMBER 3
@@ -50,6 +57,12 @@ let spaceship = {
 //Without changing lines 1 - 6, add a numEngines property with a numeric value between 1 and 10 to the spaceship object.
 //Use the delete operator to remove the 'Secret Mission' property from the spaceship object.
 
+spaceship.color = 'glorious gold';
+
+spaceship.numEngines = Math.floor(Math.random() * 10) + 1;
+delete spaceship['Secret Mission'];
+
+// console.log(spaceship);
 
 
 //*******************************************************
@@ -62,6 +75,19 @@ let retreatMessage = 'We no longer wish to conquer your planet. It is full of do
 //2)Add another method to your object literal. 
 //This method, .takeOff(), should console.log() the string 'Spim... Borp... Glix... Blastoff!'.
 //3) Invoke your two methods: first .retreat() then .takeOff().
+
+let alienShip = {
+    retreat: function () {
+        console.log(retreatMessage);
+    },
+    takeOff: function () {
+        console.log('Spim... Borp... Glix... Blastoff!');
+    },
+}
+
+alienShip.retreat();
+alienShip.takeOff();
+
 
 
 //*******************************************************
@@ -106,8 +132,20 @@ let spaceship = {
 
 //1) Create a variable capFave and assign the captain‘s favorite food (the element in the 0th index of her 'favorite foods' array) to it. 
 //Make sure to use bracket and dot notation to get the value of the food through nested access (don’t just copy the value into the variable!)
+
+let capFave = Object.values(spaceship.crew.captain['favorite foods'][0]).join('');
+console.log(capFave);
+
 //2)Right now the passengers property has a value of null. Instead, assign as its value an array of objects. These objects should represent the spaceship‘s passengers as individual objects. 
 //Make at least one passenger object in the array that has at least one key-value pair on it.
+
+
+
 //3) Create a variable firstPassenger and assign the first passenger as its value (the element in the 0th index of the spaceship.passengers array you just made). 
 //Make sure to use bracket and dot notation to get the passenger object through nested access (don’t just copy the object into the variable!)
+
+let firstPassenger = spaceship.passengers[0];
+console.log(firstPassenger);
+
+
 //*******************************************************
