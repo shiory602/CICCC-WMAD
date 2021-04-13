@@ -261,6 +261,9 @@ const person = {
 
 
 //EXAMPLE SETTERS
+/**
+ * get と set は同じ名前でもいいのか？
+ */
 const robot = {
     _model: '1E78V2',
     _energyLevel: 100,
@@ -272,11 +275,18 @@ const robot = {
             return 'Sensors are currently down.'
         }
     },
-
-
+    set numOfSensors(num) {
+        if (typeof num === 'number' && num >= 0) {
+            this._numOfSensors = num;
+        } else {
+            console.log('Pass in a number that is greater than or equal to 0');
+        }
+    }
 };
 
-
+console.log(robot.numOfSensors);
+robot.numOfSensors = 100;
+console.log(robot._numOfSensors);
 
 //1)Currently, in robot there is a getter method for numOfSensors but no setter method! What if we need to add or remove some sensors? Let’s fix that problem.
 //Add a setter method named numOfSensors using the set keyword. Provide a parameter of num. Leave the function body empty for now.
