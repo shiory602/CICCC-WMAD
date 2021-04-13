@@ -17,7 +17,8 @@ let spaceship = {
 
 let crewCount = spaceship.numCrew; // 1
 let planetArray = spaceship.flightPath; // 2
-// console.log(crewCount, planetArray);
+
+console.log(crewCount, planetArray);
 
 
 //*******************************************************
@@ -39,7 +40,8 @@ let propName = 'Active Mission';
 //2)Using bracket notation and the propName variable provided, console.log() the value of the 'Active Mission' property.
 
 let isActive = spaceship['Active Mission']; // 1
-console.log(spaceship['propName']) // 2
+// console.log(spaceship['propName']); // 2
+console.log(spaceship[propName]); // 2
 // console.log(isActive);
 
 //*******************************************************
@@ -77,15 +79,15 @@ let retreatMessage = 'We no longer wish to conquer your planet. It is full of do
 //3) Invoke your two methods: first .retreat() then .takeOff().
 
 let alienShip = {
-    retreat: function () {
-        console.log(retreatMessage);
+    retreat: msg => {
+        console.log(msg);
     },
     takeOff: function () {
         console.log('Spim... Borp... Glix... Blastoff!');
     },
 }
 
-alienShip.retreat();
+alienShip.retreat(retreatMessage);
 alienShip.takeOff();
 
 
