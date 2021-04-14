@@ -11,9 +11,7 @@ const monsterFactory = (name, age, energySource, catchPhrase) => {
 };
 
 
-
 //In the monsterFactory function above, it has four parameters and returns an object that has the properties: name, age, energySource, and scare(). To make an object that represents a specific monster like a ghost, we can call monsterFactory with the necessary arguments and assign the return value to a variable:
-
 
 const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
 ghost.scare(); // 'BOO!'
@@ -29,10 +27,26 @@ ghost.scare(); // 'BOO!'
 //3)Let’s now check what tinCan can do! Call .beep() on tinCan.
 // 
 
+const robotFactory = (model, mobile) => {
+    return {
+        model: model,
+        mobile: mobile,
+        beep() {
+            console.log('Beep Boop');
+        }
+    }
+}
+
+const tinCan = robotFactory('P-500', true);
+tinCan.beep();
 
 
 
-//NEW TOPIC: DESTRCUTURED ASSIGNMENT
+
+
+
+
+//NEW TOPIC: DESTRUCTURING ASSIGNMENT 分割代入
 //We often want to extract key-value pairs from objects and save them as variables. Take for example the following object:
 
 const vampire = {
@@ -49,14 +63,14 @@ const vampire = {
 const residence = vampire.residence;
 console.log(residence); // Prints 'Transylvania' 
 
-//However, we can also take advantage of a destructuring technique called destructured assignment to save ourselves some keystrokes. In destructured assignment we create a variable with the name of an object’s key that is wrapped in curly braces { } and assign to it the object. Take a look at the example below:
+//However, we can also take advantage of a destructuring technique called destructuring assignment to save ourselves some keystrokes. In destructuring assignment we create a variable with the name of an object’s key that is wrapped in curly braces { } and assign to it the object. Take a look at the example below:
 
-const {
-    residence
-} = vampire;
+const { residence } = vampire;
 console.log(residence); // Prints 'Transylvania'
 
-//EXERCISE DESTRUCTURED ASSIGNMENT
+
+
+//EXERCISE DESTRUCTURING ASSIGNMENT
 
 const robot = {
     model: '1E78V2',
@@ -71,19 +85,22 @@ const robot = {
     }
 };
 
+//1)Use destructuring assignment to create a const variable named functionality that extracts the functionality property of robot.
+//If you need a reminder on how to use destructuring assignment, review the example in the narrative or check the hint.
 
-//1)Use destructured assignment to create a const variable named functionality that extracts the functionality property of robot.
-//If you need a reminder on how to use destructured assignment, review the example in the narrative or check the hint.
+const { functionality } = robot;
 
 //2) Since functionality is referencing robot.functionality we can call the methods available to robot.functionality simply through functionality.
 //Take advantage of this shortcut and call the .beep() method on functionality.
 
+functionality.beep();
+
+
 
 
 //BUILT-IN OBJECT METHODS
-//Built-in Object Methods
 //In the previous exercises we’ve been creating instances of objects that have their own methods. But, we can also take advantage of built-in methods for Objects!
-//For example, we have access to object instance methods like: .hasOwnProperty(), .valueOf(), and many more! Practice your documentation reading skills and check out: MDN’s object instance documentation.
+//For example, we have access to object instance methods like: .hasOwnProperty()-true/false, .valueOf(), and many more! Practice your documentation reading skills and check out: MDN’s object instance documentation.
 //There are also useful Object class methods such as Object.assign(), Object.entries(), and Object.keys() just to name a few. For a comprehensive list, browse: MDN’s object instance documentation.
 
 
@@ -96,17 +113,17 @@ const robot = {
 };
 
 // What is missing in the following method call?
-const robotKeys = Object.keys();
+const robotKeys = Object.keys(robot);
 
-console.log();
+console.log(robotKeys);
 
 // Declare robotEntries below this line:
-
+const robotEntries = Object.entries(robot);
 
 console.log(robotEntries);
 
 // Declare newRobot below this line:
-
+const newRobot = Object.assign({laserBlaster: true, voiceRecognition: true}, robot);
 
 console.log(newRobot);
 
@@ -121,6 +138,8 @@ console.log(newRobot);
 //Declare a const variable named newRobot. newRobot will be a new object that has all the properties of robot and the properties in the following object: {laserBlaster: true, voiceRecognition: true}. Make sure that you are not changing the robot object!
 
 
+
+
 //REVIEW
 // Let’s review the concepts covered:
 
@@ -133,7 +152,7 @@ console.log(newRobot);
 // The usage of an underscore before a property name means that the original developer did not intend for that property to be directly changed.
 // Setters and getter methods allow for more detailed ways of accessing and assigning properties.
 // Factory functions allow us to create object instances quickly and repeatedly.
-// There are different ways to use object destructuring: one way is the property value shorthand and another is destructured assignment.
+// There are different ways to use object destructuring: one way is the property value shorthand and another is destructuring assignment.
 // As with any concept, it is a good skill to learn how to use the documentation with objects!
 // You’re ready to start leveraging more elegant code for creating and accessing objects in your code!
 
