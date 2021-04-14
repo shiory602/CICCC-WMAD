@@ -263,6 +263,7 @@ const person = {
 //EXAMPLE SETTERS
 /**
  * get と set は同じ名前でもいいのか？
+ * https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/set
  */
 const robot = {
     _model: '1E78V2',
