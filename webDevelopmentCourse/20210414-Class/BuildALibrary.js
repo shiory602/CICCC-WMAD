@@ -107,29 +107,147 @@ If you would like to continue working on this project, we have listed some avenu
 ● Create class called Catalog that holds all of the Media items in our library.
 */
 
-// 1.
+
 //Parent class
-class Media {
-    constructor(arg) {
-        this._title = arg._title;
+class Media { //1
+
+    #rating = [];
+
+    constructor(title, isCheckedOut, ratings) { //2 //3
+        this._title = title;
+        this._isCheckedOut = isCheckedOut;
+        this._ratings = ratings;
+    }
+    //4
+    get title() {
+        return this._title;
+    }
+    get isCheckedOut() {
+        return this._isCheckedOut;
+    }
+    get ratings() {
+        return this._ratings;
+    }
+
+    toggleCheckOutStatus() { //6
+        if(this._isCheckedOut === true) {
+            this._isCheckedOut = false;
+        } else {
+            this._isCheckedOut = true;
+        }
+        return this;
+    }
+
+    getAverageRating() { //7
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        let avg = this.#rating.reduce(reducer);
+        return avg / this.#rating.length;
+    }
+
+    addRating(val) { //8
+        this.#rating.push(val);
+        return this;
+    }
+
+    //5
+    set isCheckedOut(v) {
+        return this._title = v;
     }
 }
 
+
 //Sub classes
-class Book extends Media {
-    // `author`,
-    // `title`,
-    // pages,
-    // isCheckedOut(boolean, initially false),
-    // ratings (array, initially empty).
+// Book
+// ● Properties: author (string), title (string), pages (number), isCheckedOut
+// (boolean, initially false), and ratings (array, initially empty).
+// ● Getters: all properties have a getter
+// ● Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+
+class Book extends Media { //9
+    constructor(author, title, pages, isCheckedOut, ratings) {
+        super(title, isCheckedOut, ratings);
+        this._author = author;
+        this._pages = pages;
+    }
+    get(author) {
+        return this._author;
+    }
+    get(pages) {
+        return this._pages;
+    }
 }
 
-class Movie extends Media {
-//     director (string), title (string), runTime (number), isCheckedOut
+const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544, false);
+historyOfEverything.toggleCheckOutStatus();
+console.log(historyOfEverything.isCheckedOut);
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(5);
+console.log(historyOfEverything.getAverageRating());
+
+
+
+// Movie
+// ● properties: director (string), title (string), runTime (number), isCheckedOut
 // (boolean, initially false), and ratings (array, initially empty)
+// ● getters: all properties have a getter
+// ● methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
+class Movie extends Media {
+    constructor(director, title, runTime, isCheckedOut, ratings) {
+        super(title, isCheckedOut, ratings);
+        this._director = director;
+        this._runTime = runTime;
+    }
+    get(director) {
+        return this._director;
+    }
+    get(runTime) {
+        return this._runTime;
+    }
 }
 
+const speed = new Media('Jan de Bont', 'Speed', 116, false);
+speed.toggleCheckOutStatus();
+console.log(speed.isCheckedOut);
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+console.log(speed.getAverageRating());
+
+
+// CD
+// ● Properties: artist (string), title (string), isCheckedOut (boolean, initially false), and ratings (array, initially empty), songs (array of strings)
+// ● Getters: all properties have a getter
+// ● Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
 class CD extends Media {
-    // artist (string), title (string), isCheckedOut (boolean, initially
-    //     false), and ratings (array, initially empty), songs (array of strings)
+    #songs = [];
+
+    constructor(artist, title, isCheckedOut, ratings, songs) {
+        super(title, isCheckedOut, ratings);
+        this._artist = artist;
+        this._songs = songs;
+    }
+    get(artist) {
+        return this._artist;
+    }
+    get(songs) {
+        return this._songs;
+    }
+
+    shuffle() {
+        return this.#songs.sort((v, u) => v.localeCompare(u));
+    }
+}
+
+const myWay = new CD('Def Tech', 'My Way', 4, false);
+myWay.toggleCheckOutStatus();
+console.log(myWay.isCheckedOut);
+myWay.addRating(5);
+myWay.addRating(2);
+myWay.addRating(3);
+console.log(myWay.getAverageRating());
+
+
+class Catalog extends Media {
+    constructor()
 }
