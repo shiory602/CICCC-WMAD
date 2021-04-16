@@ -16,7 +16,7 @@ You’ll use these arrays later to check if your functions are working properly.
 Create a function, validateCred() that has a parameter of an array. The purpose of validateCred() is to return true when an array contains digits of a valid credit card number and false when it is invalid. This function should NOT mutate the values of the original array.
 
 To find out if a credit card number is valid or not, use the Luhn algorithm.
-Generally speaking, an algorithm is a series of steps that solve a problem — the Luhn algorithm___8https://en.wikipedia.org/wiki/Luhn_algorithm#Description) is a series of mathematical calculations used to validate certain identification numbers, e.g. credit card numbers. The calculations in the Luhn algorithm can be broken down as the following steps:
+Generally speaking, an algorithm is a series of steps that solve a problem — the Luhn algorithm(https://en.wikipedia.org/wiki/Luhn_algorithm#Description) Generally speaking, algorithm is a series of mathematical calculations used to validate certain identification numbers, e.g. credit card numbers. The calculations in the Luhn algorithm can be broken down as the following steps:
 1. Starting from the farthest digit to the right, AKA the check digit, iterate to the left.
 2. As you iterate to the left, every other digit is doubled (the check digit is not doubled). If the number is greater than 9 after doubling, subtract 9 from its value.
 3. Sum up all the digits in the credit card number.
@@ -69,11 +69,57 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 // Add your functions below:
 
 // 配列に有効なカード番号の数字が含まれている場合はtrueを、無効な場合はfalseを返す。配列の値を変更してはいけません。
+/*1. 右端の桁（チェックデジット）から、左に向かって繰り返します。
+2. 左への繰り返しでは、他のすべての桁が2倍になります（チェックデジットは2倍になりません）。
+    2倍にした後の数字が9より大きければ、その値から9を引きます。
+// 奇数の時は偶数。偶数の時は奇数のインデックスの値を２倍にして、数字が９より大きければ９を引く。
+3. クレジットカード番号のすべての桁を合計します。
+4. モジュロ10の和が0の場合（10で割った和の余りが0の場合）、その数字は有効であり、そうでない場合は無効です。
+以下は、用意された有効な数字と無効な数字の両方を使って、あなたの関数をチェックしてみましょう。*/
 function validateCred(arr) {
-    // return batch.forEach(v => v === arr) ? true : false;
-    
+    for (let i = 0; i < 5; i++) {
+        return arr === batch[i] ? true : false;
+    }
 }
 
-// console.log(validateCred([2,4,5,7,2,5,3]));
-// console.log(validateCred([4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, 8]));
 
+//クレジットカード番号のネストした配列を1つのパラメータとする、findInvalidCards()という別の関数を作成します。
+//役割は、入れ子になった配列の中で無効な番号をチェックし、無効なカードの別の入れ子になった配列を返すことです。
+function findInvalidCards(nestedArray) {
+    
+    // return invalidArray
+}
+/*
+無効なクレジットカード番号をすべて見つけた後、これらの不良番号を発行した可能性のあるクレジットカード会社を特定する必要があります。
+関数 idInvalidCardCompanies() を作成します。この関数は、無効な番号のネストした配列を1つのパラメータとし、会社の配列を返します。
+現在、4つの会社が認められていますが、それぞれの会社の最初の桁が異なります。
+次の表は、どの桁がどの会社に固有かを示しています。
+
+1桁目 会社
+3 アメックス(アメリカン・エキスプレス)
+4 Visa（ビザ
+5 マスターカード
+6 Discover（ディスカバー
+記載されている番号で始まらない場合は、次のようなメッセージを印刷してください。"Company not found" のようなメッセージを出力します。
+idInvalidCardCompanies()は、無効な番号のカードを郵送した会社の配列を返す必要があります。例えば、無効なVisaカードが2枚あったとしても、"Visa"は配列の中に一度しか現れません。*/
+
+function idInvalidCardCompanies() {
+    let firstDigit = batch.forEach(arr => arr[arr.length - 1]);
+    switch (firstDigit) {
+        case 3:
+            return 'Amex';
+        case 4:
+            return 'Visa';
+        case 5:
+            return 'Mastercard';
+        case 6:
+            return 'Discover';
+        default:
+            alert('Company not found');
+    }
+
+}
+
+console.log(findInvalidCards([4, 5, 3, 9, 6, 7, 8]));
+console.log(validateCred([4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, 8]));
+// console.log(idInvalidCardCompanies(valid4));
