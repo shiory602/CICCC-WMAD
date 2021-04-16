@@ -111,12 +111,11 @@ If you would like to continue working on this project, we have listed some avenu
 //Parent class
 class Media { //1
 
-    #rating = [];
+    _rating = [];
 
-    constructor(title, isCheckedOut, ratings) { //2 //3
+    constructor(title, isCheckedOut) { //2 //3
         this._title = title;
         this._isCheckedOut = isCheckedOut;
-        this._ratings = ratings;
     }
     //4
     get title() {
@@ -124,9 +123,6 @@ class Media { //1
     }
     get isCheckedOut() {
         return this._isCheckedOut;
-    }
-    get ratings() {
-        return this._ratings;
     }
 
     toggleCheckOutStatus() { //6
@@ -140,12 +136,12 @@ class Media { //1
 
     getAverageRating() { //7
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        let avg = this.#rating.reduce(reducer);
-        return avg / this.#rating.length;
+        let avg = this._rating.reduce(reducer);
+        return avg / this._rating.length;
     }
 
     addRating(val) { //8
-        this.#rating.push(val);
+        this._rating.push(val);
         return this;
     }
 
@@ -169,10 +165,10 @@ class Book extends Media { //9
         this._author = author;
         this._pages = pages;
     }
-    get(author) {
+    get() {
         return this._author;
     }
-    get(pages) {
+    get() {
         return this._pages;
     }
 }
@@ -198,10 +194,10 @@ class Movie extends Media {
         this._director = director;
         this._runTime = runTime;
     }
-    get(director) {
+    get() {
         return this._director;
     }
-    get(runTime) {
+    get() {
         return this._runTime;
     }
 }
@@ -220,22 +216,18 @@ console.log(speed.getAverageRating());
 // ● Getters: all properties have a getter
 // ● Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
 class CD extends Media {
-    #songs = [];
+    _songs = [];
 
-    constructor(artist, title, isCheckedOut, ratings, songs) {
+    constructor(artist, title, isCheckedOut, ratings) {
         super(title, isCheckedOut, ratings);
         this._artist = artist;
-        this._songs = songs;
     }
-    get(artist) {
+    get() {
         return this._artist;
-    }
-    get(songs) {
-        return this._songs;
     }
 
     shuffle() {
-        return this.#songs.sort((v, u) => v.localeCompare(u));
+        return this._songs.sort((v, u) => v.localeCompare(u));
     }
 }
 
@@ -248,6 +240,3 @@ myWay.addRating(3);
 console.log(myWay.getAverageRating());
 
 
-class Catalog extends Media {
-    constructor()
-}
