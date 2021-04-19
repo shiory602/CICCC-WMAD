@@ -1,0 +1,41 @@
+What does the INSERT statement do?
+> Insert new rows into a table.
+テーブルに新しいデータを追加
+
+Which clause is used with the ALTER TABLE statement?
+> ADD COLUMN
+既存のテーブルの定義を変更
+
+What is a NULL value?
+> A value that represents missing or unknown data.
+
+Which of the following statements is correct and complete?
+> DELETE FROM icecream
+  WHERE flavor IS NULL
+
+What is a relational database?
+> A database that organizes information into one or more tables.
+データを表形式で扱うMySQLとかデータベース
+
+What is the purpose of the * character?
+> It selects every column in the table.
+＊は全てのカラム（列）のデータ
+
+What would you need to complete the associated UPDATE statement?
+> A table name
+    UPDATE テーブル名
+    SET 項目 = 値
+    WHERE 項目 = 条件;
+
+What would be correct syntax for a CREATE TABLE statement?
+> CREATE TABLE meals (
+   name TEXT,
+   rating INTEGER
+  );
+
+  What are common data types in SQL?
+  > Integer, Text, Date, Real
+
+  What does SQL stand for?
+  > Structured Query Language
+  構造化された（データベースへの）質問用言語
