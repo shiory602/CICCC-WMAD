@@ -8,8 +8,8 @@ SQL is case insensitive language
 - DML: Data Manipulation Language -> create/change/delete data
 - DCL: Data Control Language -> create/change/delete authority
 
-** How to manipulate tables of database.
-*** Add data
+## How to manipulate tables of database.
+### Add data
 ```SQL
 INSERT INTO table_name ( column_name )
 VALUE ( value );
@@ -17,7 +17,7 @@ VALUE ( value );
 You don't need to put `id` since it is added by auto increment.
 If you don't put `column_name`, the place would be `NULL`.
 
-*** Create a list of NULL/NOT NULL
+### Create a list of NULL/NOT NULL
 `NULL`: there is no value
 ```SQL
 SELECT column_name
@@ -31,7 +31,7 @@ WHERE column_name IS NOT NULL;
 ```
 You cannot use `=` when you use NULL.
 
-*** Update columns of records
+### Update columns of records
 ```SQL
 UPDATE table_name
 SET column = value
@@ -39,13 +39,13 @@ WHERE condition;
 ```
 If you don't put `WHERE`, all records in the table would be updated.
 
-*** Delete records of the table
+### Delete records of the table
 ```SQL
 DELETE FROM table_name WHERE condition;
 ```
 If you don't put `WHERE`, all table data would be deleted.
 
-*** Specify the maximum number of records to retrieve.
+### Specify the maximum number of records to retrieve.
 ```SQL
 SELECT column_name
 FROM table_name
@@ -53,13 +53,13 @@ WHERE condition
 LIMIT numbers;
 ```
 
-*** Select all records in the table
+### Select all records in the table
 ```SQL
 SELECT * FROM table_name
 LIMIT numbers;
 ```
 
-*** Return the MIN/MAX value of the selected column
+### Return the MIN/MAX value of the selected column
 ```SQL
 SELECT MIN( column_name )
 FROM table_name
