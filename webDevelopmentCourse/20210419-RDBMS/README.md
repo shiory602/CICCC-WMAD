@@ -1,7 +1,7 @@
 2021/04/19
 
 
-1) Explain something you have learned today?
+> 1) Explain something you have learned today?
 RDBMS - Relational DataBase Management System -
 SQL is case insensitive language
 - DDL: Data Definition Language -> create/change/delete entire table
@@ -74,11 +74,11 @@ WHERE condition;
 
 
 
-2) Tell me something you found more interesting than others?
+> 2) Tell me something you found more interesting than others?
 You can save data such as text or numbers in a table.
 There is not only one language to manipulate the data. This time I'll learn MySQL.
 
 
-3) Tell me something you found more difficult than others?
+> 3) Tell me something you found more difficult than others?
 Sometime if you don't put `WHERE`, you change/delete all data.
 I feel it is a little bit dangerous.
