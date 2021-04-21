@@ -51,9 +51,9 @@ var student = {
 
 console.log(Object.keys(student).length);
 
-Answer2:
+// Answer2:
 
-  let length = 0;
+let length = 0;
 for (key in student) {
   length++;
 }
@@ -103,13 +103,14 @@ class VolumeOfCylinder {
     this.h = h;
   }
 
-  set getVolume() {
+  get getVolume() {
+    let π = 3.14;
     return π * this.r * this.r * this.h;
   }
 }
 
 const V = new VolumeOfCylinder(2, 4);
-console.log(V.getVolume());
+console.log(V.getVolume);
 
 
 
@@ -118,7 +119,7 @@ console.log(V.getVolume());
 
 // 6. Write a JavaScript program to sort an array of JavaScript objects.
 // Sample Object :
-/*
+
 var library = [
 {
 title: 'The Road Ahead',
@@ -135,6 +136,7 @@ title: 'Mockingjay: The Final Book of The Hunger Games',
 author: 'Suzanne Collins',
 libraryID: 3245
 }];
+
 /* Expected Output:
 [[object Object] {
 author: "Walter Isaacson",
@@ -151,24 +153,43 @@ title: "Bill Gates"
 }] */
 // Answer:
 
-console.log(library.sort(function (a, b) {
-  if (a > b) return -1;
-  if (b > a) return 1;
-  return 0;
-}));
+// console.log(library.sort(function (a, b) {
+//   if (a > b) return -1;
+//   if (b > a) return 1;
+//   return 0;
+// }));
 
-var tmp = library.map(function (pro) {
-  return {
-    pro: pro,
-    key: pro
+// var tmp = library.map(function (pro) {
+//   return {
+//     pro: pro.libraryID,
+//     key: pro.libraryID
+//   };
+// }).sort(function (a, b) {
+//   if (a > b) return -1;
+//   if (b > a) return 1;
+//   return 0;
+// }).map(function (obj) {
+//   return obj.pro;
+// });
+// console.log(tmp);
+
+var sort_by = function(field_name, reverse, initial){
+  var key = initial ?
+  function(x)
+  {
+  return initial(x[field_name]);
+  } :
+  function(x)
+  {
+  return x[field_name];
   };
-}).sort(function (a, b) {
-  if (a > b) { //昇順ソート
-    return -1;
-  } else {
-    return 1;
-  }
-}).map(function (obj) {
-  return obj.pro;
-});
-console.log(tmp);
+  reverse = !reverse ? 1 : -1;
+  
+  return function (x, y) {
+  return x = key(x), y = key(y), reverse * ((x &gt; y) - (y &gt;
+  x));
+  } ;
+  };
+  
+  var newobj = library.sort(sort_by(&#39;libraryID&#39;, true, parseInt));
+  console.log(newobj);
