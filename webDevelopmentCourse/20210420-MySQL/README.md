@@ -1,5 +1,5 @@
 
-1) Explain something you have learned today?
+> 1) Explain something you have learned today?
 
 # My SQL
 
@@ -140,13 +140,13 @@ WHERE column_name BETWEEN value1 AND value2;
 The WHERE clause is used to filter records(rows) that match a certain condition.
 
 
-2) Tell me something you found more interesting than others?
+> 2) Tell me something you found more interesting than others?
 
 You can use wildcard for selecting all data words starting/ending with the specified character.
 Also if you use `NOT` operator before using LIKE operator, you can specify the opposite of what you specified.
 
 
-3) Tell me something you found more difficult than others?
+> 3) Tell me something you found more difficult than others?
 
 These three are all similar manipulation for me, and make me confused at first.
 
