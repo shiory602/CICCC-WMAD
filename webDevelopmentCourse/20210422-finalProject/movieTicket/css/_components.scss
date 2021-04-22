@@ -11,6 +11,7 @@
     height: 23px;
     padding-top: 4px;
     background-color: $primary-color;
+    box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
 }
 
 .sold {
@@ -18,6 +19,7 @@
     height: 23px;
     padding-top: 4px;
     background-color: $dark-color;
+    box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
 }
 
 .selected {
@@ -25,6 +27,7 @@
     height: 23px;
     padding-top: 4px;
     background-color: $light-color;
+    box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
 }
 
 // Seat box: END /////////////////////////////////////////////

@@ -144,6 +144,8 @@ body {
   height: 23px;
   padding-top: 4px;
   background-color: #C4C4C4;
+  -webkit-box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
+          box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
 }
 
 .sold {
@@ -151,6 +153,8 @@ body {
   height: 23px;
   padding-top: 4px;
   background-color: #0D321C;
+  -webkit-box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
+          box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
 }
 
 .selected {
@@ -158,5 +162,7 @@ body {
   height: 23px;
   padding-top: 4px;
   background-color: #00DE59;
+  -webkit-box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
+          box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
 }
 /*# sourceMappingURL=style.css.map */
