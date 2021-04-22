@@ -56,9 +56,9 @@ Specifying a primary key allows for fast searches and integration with other tab
 Add the code at the end of `CREATE TABLE` in the parent table.
 ```SQL
 CREATE TABLE parent_table_name1 (
-    no1 INT NOT NULL, -- Number for primary key
-    column_name, data_type,
-    PRIMARY KEY (no) -- Primary Key
+    `ID` INT NOT NULL, -- Number for primary key
+    `column_name` DATA_TYPE,
+    PRIMARY KEY (ID) -- Primary Key
 )
 ```
 
@@ -69,14 +69,14 @@ CREATE TABLE parent_table_name1 (
 Add the code at the end of `CREATE TABLE` in the child table.
 ```SQL
 CREATE TABLE child_table_name2 (
-    no2 INT NOT NULL, -- Number for foreign key
-    no1 CHAR(5), -- Number for primary key
-    column_name, data_type,
-    column_name, data_type,
-    column_name, data_type,
-    PRIMARY KEY (no1), -- Primary Key
-    FOREIGN KEY(no2) -- Foreign Key
-    REFERENCES parent_table_name1(no1)
+    `ID` INT NOT NULL, -- Number for primary key
+    `anotherID` CHAR(5) NOT NULL, -- Number for foreign key
+    `column_name` DATA_TYPE,
+    `column_name` DATA_TYPE,
+    `column_name` DATA_TYPE,
+    PRIMARY KEY (ID), -- Primary Key
+    FOREIGN KEY(anotherID) -- Foreign Key
+    REFERENCES parent_table_name1(ID)
 );
 ```
 
@@ -115,17 +115,17 @@ ON condition: table_name1.foreignKey = table_name2.primaryKey;
 1. Create a child_table without foreign key.
 ```SQL
 CREATE TABLE child_table_name3 (
-    no1 CHAR(5),
-    column_name, data_type,
-    column_name, data_type,
-    column_name, data_type,
-    PRIMARY KEY (no1) -- Primary Key
+    `ID` INT NOT NULL,
+    `column_name` DATA_TYPE,
+    `column_name` DATA_TYPE,
+    `column_name` DATA_TYPE,
+    PRIMARY KEY (ID) -- Primary Key
 );
 ```
 2. Add foreign key with using `ALTER TABLE`
 ```SQL
 ALTER TABLE child_table_name3 ADD FOREIGN KEY(no3) 
-REFERENCES child_table_name1(no1);
+REFERENCES child_table_name1(ID);
 ```
 
 ### How to delete the Foreign Key
@@ -140,52 +140,25 @@ ALTER TABLE child_table_name3 DROP FOREIGN KEY sample2_employees_ibfk_1;
 
 > 3) Tell me something you found more difficult than others?
 
-### Do NOT use '' for COUNT()
+### Do NOT use quotations'' for COUNT()
 
 EXAMPLE DATA
 ```SQL
-CREATE TABLE Score(
-  `StudentID` INT NOT NULL,
-  `Student` CHAR(225),
-  `Math` INT,
-  `English` INT,
-  `Science` INT,
-  `Music` INT,
-  PRIMARY KEY (StudentID)
-  );
-  
-INSERT INTO Score
-VALUE(1,  'Sarah', 32, 89, 62, 77);
-  
-INSERT INTO Score
-VALUE(2,  'Jack', 91, 83, 89, 76);
-  
-INSERT INTO Score
-VALUE(3,  'Alice', 87, 43, 65, 92);
-  
-INSERT INTO Score
-VALUE(4,  'Davis', 23, 54, 42, 65);
+CREATE TABLE Student (
+    `ID` INT NOT NULL,
+    `Name` CHAR(225),
+    `Age`INT,
+);
 
-------------------------------------
 
-SELECT *
-FROM Score;
+INSERT INTO Student
+VALUE(1, 'Alice', 13);  
 
-SELECT SUM(Math)
-FROM Score;
+INSERT INTO Student
+VALUE(2, 'Bob', 15);
 
-SELECT AVG(Math)
-FROM Score;
-
-SELECT COUNT(*)
-FROM Score
-WHERE Music > 60;
-
-SELECT MAX(Math)
-FROM Score;
-
-SELECT MIN(Math)
-FROM Score;
+INSERT INTO Student
+VALUE(3, 'Peter', 11);
 
 ```
 
@@ -212,5 +185,3 @@ CREATE TABLE Score(
   );
 ```
 
-
-** I also tried to create Foreign Key but I could not make it this time. So I need to get more research in the future. **
