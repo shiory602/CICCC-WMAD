@@ -1,0 +1,30 @@
+@import '_base.scss';
+
+// Seat box: START ///////////////////////////////////////////
+
+.seat-number {
+    font-size: 1px;
+}
+
+.available {
+    width: 20px;
+    height: 23px;
+    padding-top: 4px;
+    background-color: $primary-color;
+}
+
+.sold {
+    width: 20px;
+    height: 23px;
+    padding-top: 4px;
+    background-color: $dark-color;
+}
+
+.selected {
+    width: 20px;
+    height: 23px;
+    padding-top: 4px;
+    background-color: $light-color;
+}
+
+// Seat box: END /////////////////////////////////////////////
