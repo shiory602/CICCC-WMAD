@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -10,7 +11,8 @@ body {
 }
 
 .container header * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .container header * body {
@@ -27,22 +29,21 @@ body {
 }
 
 .container header * body .container header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container header * body .container header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container header * body .container header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container header * body .container nav {
@@ -51,8 +52,11 @@ body {
 
 .container header * body .container nav ul {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 70px;
   background: #598d86;
   padding-top: 5vh;
@@ -60,7 +64,9 @@ body {
 
 .container header * body .container nav ul li {
   display: inline-block;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container header * body .container nav ul li a {
@@ -118,22 +124,21 @@ body {
 }
 
 .container header * body .container2 header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container header * body .container2 header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container header * body .container2 header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container header * body .container2 header .icon {
@@ -225,22 +230,21 @@ body {
 }
 
 .container header * body .container3 header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container header * body .container3 header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container header * body .container3 header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container header * body .container3 header .icon {
@@ -304,22 +308,21 @@ body {
 }
 
 .container header * body .container3 .box .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container header * body .container3 .box .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container header * body .container3 .box .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container header * body .container3 .submit {
@@ -347,35 +350,39 @@ body {
     float: left;
   }
   .container header * body .container header .right {
-    font-size: 6em;
-    padding-top: 5vh;
-    padding-right: 3vh;
+    float: right;
   }
   .container header * body .container header .right ul {
+    margin: 3vw;
     font-size: 1.5em;
     list-style-type: none;
-    margin: auto;
-    padding: 23vh 11vw 0;
   }
   .container header * body .container header .right ul li {
     display: inline-block;
     padding: 0.6vw;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .container header * body .container nav {
     margin-top: 2vh;
   }
   .container header * body .container nav ul {
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     height: 70px;
     background: #598d86;
     padding-top: 5vh;
   }
   .container header * body .container nav ul li {
     display: inline-block;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .container header * body .container nav ul li a {
     color: #303f4e;
@@ -421,20 +428,19 @@ body {
     float: left;
   }
   .container header * body .container2 header .right {
-    font-size: 6em;
-    padding-top: 5vh;
-    padding-right: 3vh;
+    float: right;
   }
   .container header * body .container2 header .right ul {
+    margin: 3vw;
     font-size: 1.5em;
     list-style-type: none;
-    margin: auto;
-    padding: 23vh 11vw 0;
   }
   .container header * body .container2 header .right ul li {
     display: inline-block;
     padding: 0.6vw;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .container header * body .container2 header .icon {
     width: 65px;
@@ -498,20 +504,19 @@ body {
     float: left;
   }
   .container header * body .container3 header .right {
-    font-size: 6em;
-    padding-top: 5vh;
-    padding-right: 3vh;
+    float: right;
   }
   .container header * body .container3 header .right ul {
+    margin: 3vw;
     font-size: 1.5em;
     list-style-type: none;
-    margin: auto;
-    padding: 23vh 11vw 0;
   }
   .container header * body .container3 header .right ul li {
     display: inline-block;
     padding: 0.6vw;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .container header * body .container3 header .icon {
     width: 40px;
@@ -564,20 +569,19 @@ body {
     float: left;
   }
   .container header * body .container3 .box .right {
-    font-size: 6em;
-    padding-top: 5vh;
-    padding-right: 3vh;
+    float: right;
   }
   .container header * body .container3 .box .right ul {
+    margin: 3vw;
     font-size: 1.5em;
     list-style-type: none;
-    margin: auto;
-    padding: 23vh 11vw 0;
   }
   .container header * body .container3 .box .right ul li {
     display: inline-block;
     padding: 0.6vw;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .container header * body .container3 .submit {
     width: 75%;
@@ -604,22 +608,21 @@ body {
 }
 
 .container header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container nav {
@@ -628,8 +631,11 @@ body {
 
 .container nav ul {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 70px;
   background: #598d86;
   padding-top: 5vh;
@@ -637,7 +643,9 @@ body {
 
 .container nav ul li {
   display: inline-block;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container nav ul li a {
@@ -695,22 +703,21 @@ body {
 }
 
 .container2 header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container2 header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container2 header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container2 header .icon {
@@ -802,22 +809,21 @@ body {
 }
 
 .container3 header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container3 header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container3 header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container3 header .icon {
@@ -881,22 +887,21 @@ body {
 }
 
 .container3 .box .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container3 .box .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container3 .box .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container3 .submit {
@@ -924,22 +929,21 @@ body {
 }
 
 .container header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container nav {
@@ -948,8 +952,11 @@ body {
 
 .container nav ul {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 70px;
   background: #598d86;
   padding-top: 5vh;
@@ -957,7 +964,9 @@ body {
 
 .container nav ul li {
   display: inline-block;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container nav ul li a {
@@ -1015,22 +1024,21 @@ body {
 }
 
 .container2 header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container2 header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container2 header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container2 header .icon {
@@ -1109,22 +1117,21 @@ body {
 }
 
 .container3 header .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container3 header .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container3 header .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container3 header .icon {
@@ -1188,22 +1195,21 @@ body {
 }
 
 .container3 .box .right {
-  font-size: 6em;
-  padding-top: 5vh;
-  padding-right: 3vh;
+  float: right;
 }
 
 .container3 .box .right ul {
+  margin: 3vw;
   font-size: 1.5em;
   list-style-type: none;
-  margin: auto;
-  padding: 23vh 11vw 0;
 }
 
 .container3 .box .right ul li {
   display: inline-block;
   padding: 0.6vw;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container3 .submit {
@@ -1223,3 +1229,4 @@ body {
   font-size: 3em;
   line-height: 14hw;
 }
+/*# sourceMappingURL=style.css.map */
