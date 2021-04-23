@@ -51,15 +51,15 @@ function changeTime() {
 }
 
 function getStartTime(name) {
-    if(name === '') {
+    if (name === '') {
         return '--:--';
-    } else if(name === 'avengers') {
+    } else if (name === 'avengers') {
         return '20:40';
-    } else if(name === 'joker') {
+    } else if (name === 'joker') {
         return '19:10';
-    } else if(name === 'toyStory') {
+    } else if (name === 'toyStory') {
         return '20:15';
-    } else if(name === 'theLionKing') {
+    } else if (name === 'theLionKing') {
         return '21:45';
     } else {
         throw new Error(`Unknown movie: ${name}`);
@@ -73,15 +73,15 @@ function changePrices() {
 }
 
 function getMoviePrice(name) {
-    if(name === '') {
+    if (name === '') {
         return 0;
-    } else if(name === 'avengers') {
+    } else if (name === 'avengers') {
         return 10;
-    } else if(name === 'joker') {
+    } else if (name === 'joker') {
         return 12;
-    } else if(name === 'toyStory') {
+    } else if (name === 'toyStory') {
         return 8;
-    } else if(name === 'theLionKing') {
+    } else if (name === 'theLionKing') {
         return 9;
     } else {
         throw new Error(`Unknown movie: ${name}`);
