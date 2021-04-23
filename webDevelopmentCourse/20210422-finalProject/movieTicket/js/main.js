@@ -1,18 +1,18 @@
 const seatCount = document.querySelector('#seatCount');
-const price = document.querySelector('#price');
+const totalPrice = document.querySelector('#price');
 const time = document.querySelector('#time');
 /** @type {HTMLElement[]} */
 const seats = [...document.querySelectorAll('.jsSeat')];
-const available = document.querySelector('.available');
-const sold = document.querySelector('.sold');
-const selected = document.querySelector('.selected');
+const movies = document.querySelector('#movies');
+
 
 let seatSum = 0;
 countSelectedSeats();
-let priceSum = 0;
+let price = 0;
+changePrices();
 
 seatCount.innerHTML = seatSum;
-price.innerHTML = `$${priceSum}`;
+totalPrice.innerHTML = `$${price}`;
 time.innerHTML = '20:40';
 
 seats.forEach(box => box.addEventListener('click', e => {
@@ -28,11 +28,37 @@ seats.forEach(box => box.addEventListener('click', e => {
         el.classList.remove('selected');
     }
     countSelectedSeats();
+    changePrices();
     seatCount.innerHTML = seatSum;
-    price.innerHTML = `$${priceSum}`;
 }));
 
+movies.addEventListener('change', e => {
+    changePrices();
+})
 
 function countSelectedSeats() {
     seatSum = seats.filter(v => v.classList.contains('selected')).length;
+}
+
+
+function changePrices() {
+    let movieName = movies.value;
+    price = getMoviePrice(movieName) * seatSum;
+    totalPrice.innerHTML = `$${price}`;
+}
+
+function getMoviePrice(name) {
+    if(name === '') {
+        return 0;
+    } else if(name === 'avengers') {
+        return 10;
+    } else if(name === 'joker') {
+        return 12;
+    } else if(name === 'toyStory') {
+        return 8;
+    } else if(name === 'theLionKing') {
+        return 9;
+    } else {
+        throw new Error(`Unknown movie: ${name}`);
+    }
 }
