@@ -10,10 +10,12 @@ let seatSum = 0;
 countSelectedSeats();
 let price = 0;
 changePrices();
+let startTime = '20:40';
+changeTime();
 
 seatCount.innerHTML = seatSum;
 totalPrice.innerHTML = `$${price}`;
-time.innerHTML = '20:40';
+time.innerHTML = startTime;
 
 seats.forEach(box => box.addEventListener('click', e => {
     /** @type {HTMLElement} */
@@ -29,6 +31,7 @@ seats.forEach(box => box.addEventListener('click', e => {
     }
     countSelectedSeats();
     changePrices();
+    changeTime();
     seatCount.innerHTML = seatSum;
 }));
 
@@ -40,6 +43,28 @@ function countSelectedSeats() {
     seatSum = seats.filter(v => v.classList.contains('selected')).length;
 }
 
+
+function changeTime() {
+    let movieName = movies.value;
+    startTime = getStartTime(movieName);
+    time.innerHTML = startTime;
+}
+
+function getStartTime(name) {
+    if(name === '') {
+        return '--:--';
+    } else if(name === 'avengers') {
+        return '20:40';
+    } else if(name === 'joker') {
+        return '19:10';
+    } else if(name === 'toyStory') {
+        return '20:15';
+    } else if(name === 'theLionKing') {
+        return '21:45';
+    } else {
+        throw new Error(`Unknown movie: ${name}`);
+    }
+}
 
 function changePrices() {
     let movieName = movies.value;
