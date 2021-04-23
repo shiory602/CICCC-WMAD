@@ -48,6 +48,7 @@ body {
                 display: inline-block;
                 box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
             }
+
             span {
                 padding-left: 10px;
             }
@@ -60,6 +61,15 @@ body {
     width: 1000px;
     margin: 50px auto;
     text-align: center;
+
+    .screen {
+        margin-bottom: 20px;
+
+        h6 {
+            width: 250px;
+            margin: 0 auto;
+        }
+    }
 
     .seats-box {
         display: flex;

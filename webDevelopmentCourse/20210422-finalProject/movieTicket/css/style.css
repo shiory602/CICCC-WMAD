@@ -78,6 +78,15 @@ body {
   text-align: center;
 }
 
+.bottom-wrap .screen {
+  margin-bottom: 20px;
+}
+
+.bottom-wrap .screen h6 {
+  width: 250px;
+  margin: 0 auto;
+}
+
 .bottom-wrap .seats-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,6 +153,7 @@ body {
   height: 23px;
   padding-top: 4px;
   background-color: #C4C4C4;
+  color: #222423;
   -webkit-box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
           box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
 }
@@ -153,6 +163,7 @@ body {
   height: 23px;
   padding-top: 4px;
   background-color: #0D321C;
+  color: #222423;
   -webkit-box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
           box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
 }
@@ -162,7 +173,13 @@ body {
   height: 23px;
   padding-top: 4px;
   background-color: #00DE59;
+  color: #222423;
   -webkit-box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
           box-shadow: 2px 3px 3px rgba(34, 36, 35, 0.8);
+}
+
+.bottom-wrap .screen h6 {
+  background-color: #222423;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
