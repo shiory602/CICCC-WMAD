@@ -8,25 +8,45 @@ const time = document.querySelector('#time');
 /** @type {HTMLElement[]} */
 const seats = [...document.querySelectorAll('.jsSeat')];
 const movies = document.querySelector('#movies');
-
+let seatSum = 0;
+let price = 0;
+let startTime = '--:--';
+let selectedSeats = [];
 
 main();
 
 function main() {
-    load();
+    // selectedSeats = load();
+    render();
 
-    let seatSum = 0;
-    countSelectedSeats();
-    let price = 0;
-    changePrices();
-    let startTime = '20:40';
-    changeTime();
+    seats.forEach(box => box.addEventListener('click', e => {
+        /** @type {HTMLElement} */
+        const el = e.currentTarget;
+        if (el.classList.contains('sold')) {
+            alert('This seat is already sold.');
+        } else if (el.classList.contains('available')) {
+            el.classList.add('selected');
+            el.classList.remove('available');
+            save(selectedSeats.push(el));
+        } else if (el.classList.contains('selected')) {
+            el.classList.add('available');
+            el.classList.remove('selected');
+            save(selectedSeats.pop(el));
+        }
+        countSelectedSeats();
+        changePrices();
+        changeTime();
+        seatCount.innerHTML = seatSum;
 
-    seatCount.innerHTML = seatSum;
-    totalPrice.innerHTML = `$${price}`;
-    time.innerHTML = startTime;
+        console.log(selectedSeats);
 
-    save();
+        render();
+    }));
+
+
+    movies.addEventListener('change', e => {
+        changePrices();
+    })
 }
 
 
@@ -98,26 +118,16 @@ function load() {
     return data;
 }
 
+/**
+ * 画面更新
+ */
+function render() {
 
-seats.forEach(box => box.addEventListener('click', e => {
-    /** @type {HTMLElement} */
-    const el = e.currentTarget;
-    if (el.classList.contains('sold')) {
-        alert('This seat is already sold.');
-    } else if (el.classList.contains('available')) {
-        el.classList.add('selected');
-        el.classList.remove('available');
-    } else if (el.classList.contains('selected')) {
-        el.classList.add('available');
-        el.classList.remove('selected');
-    }
     countSelectedSeats();
     changePrices();
     changeTime();
+
     seatCount.innerHTML = seatSum;
-}));
-
-
-movies.addEventListener('change', e => {
-    changePrices();
-})
+    totalPrice.innerHTML = `$${price}`;
+    time.innerHTML = startTime;
+}
