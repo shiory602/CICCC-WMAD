@@ -31,14 +31,13 @@ function main() {
         } else if (el.classList.contains('selected')) {
             el.classList.add('available');
             el.classList.remove('selected');
-            save(selectedSeats.pop(el));
+            decrement(el, selectedSeats);
         }
         countSelectedSeats();
         changePrices();
         changeTime();
         seatCount.innerHTML = seatSum;
 
-        console.log(selectedSeats);
 
         render();
     }));
@@ -97,6 +96,20 @@ function getMoviePrice(name) {
     } else {
         throw new Error(`Unknown movie: ${name}`);
     }
+}
+
+/**
+ * Decrement,
+ * @param {Item[]} data 
+ */
+function decrement(el, data) {
+    
+    data.forEach(v => {
+        if(v === el) {
+            let index = data.indexOf(el)
+            data.splice(index, 1);
+        }
+    });
 }
 
 /**
