@@ -5,6 +5,7 @@ const DATA_KEY = 'your-movie-seats';
 const seatCount = document.querySelector('#seatCount');
 const totalPrice = document.querySelector('#price');
 const time = document.querySelector('#time');
+const seatsList = document.querySelector('.seats');
 /** @type {HTMLElement[]} */
 const seats = [...document.querySelectorAll('.jsSeat')];
 const movies = document.querySelector('#movies');
@@ -16,36 +17,83 @@ let selectedSeats = [];
 main();
 
 function main() {
-    // selectedSeats = load();
-    render();
+
+    newLineS('A');
+    newLineS('B');
+    newLineL('C');
+    newLineL('D');
+    newLineL('E');
+    newLineL('F');
+    newLineL('G');
+    newLineL('H');
+
+    selectedSeats = load();
 
     seats.forEach(box => box.addEventListener('click', e => {
         /** @type {HTMLElement} */
         const el = e.currentTarget;
+        const text = el.textContent;
         if (el.classList.contains('sold')) {
             alert('This seat is already sold.');
         } else if (el.classList.contains('available')) {
             el.classList.add('selected');
             el.classList.remove('available');
-            save(selectedSeats.push(el));
+            selectedSeats.push(text);
+            save(selectedSeats);
         } else if (el.classList.contains('selected')) {
             el.classList.add('available');
             el.classList.remove('selected');
-            decrement(el, selectedSeats);
+            decrement(selectedSeats, text);
         }
         countSelectedSeats();
         changePrices();
         changeTime();
         seatCount.innerHTML = seatSum;
-
-
-        render();
     }));
 
 
     movies.addEventListener('change', e => {
         changePrices();
     })
+}
+
+function newLineS(alpha) {
+    const line = document.createElement('div');
+    line.classList.add('line');
+    line.innerHTML = `
+        <div class="jsSeat box seat-number available">${alpha}3</div>
+        <div class="jsSeat box seat-number available">${alpha}2</div>
+
+        <div class="jsSeat box seat-number available">${alpha}4</div>
+        <div class="jsSeat box seat-number available">${alpha}5</div>
+        <div class="jsSeat box seat-number sold">${alpha}6</div>
+        <div class="jsSeat box seat-number sold">${alpha}7</div>
+        <div class="jsSeat box seat-number available">${alpha}8</div>
+        <div class="jsSeat box seat-number available">${alpha}9</div>
+        `;
+
+    seatsList.appendChild(line);
+}
+
+function newLineL(alpha) {
+    const line = document.createElement('div');
+    line.classList.add('line');
+    line.innerHTML = `
+    <div class="jsSeat box seat-number available">${alpha}1</div>
+    <div class="jsSeat box seat-number available">${alpha}2</div>
+    <div class="jsSeat box seat-number available">${alpha}3</div>
+
+    <div class="jsSeat box seat-number available">${alpha}4</div>
+    <div class="jsSeat box seat-number available">${alpha}5</div>
+    <div class="jsSeat box seat-number available">${alpha}6</div>
+    <div class="jsSeat box seat-number available">${alpha}7</div>
+
+    <div class="jsSeat box seat-number available">${alpha}8</div>
+    <div class="jsSeat box seat-number available">${alpha}9</div>
+    <div class="jsSeat box seat-number available">${alpha}10</div>
+        `;
+
+    seatsList.appendChild(line);
 }
 
 
@@ -99,12 +147,34 @@ function getMoviePrice(name) {
 }
 
 /**
+ * 画面更新
+ */
+function render(data) {
+    console.log(data);
+
+    countSelectedSeats();
+    changePrices();
+    changeTime();
+    seatCount.innerHTML = seatSum;
+    totalPrice.innerHTML = `$${price}`;
+    time.innerHTML = startTime;
+
+    // elList.innerHtml = "";
+    // data.forEach((record) => {
+    //     const el = createElItemSomehow(record);
+    //     elList.append(el);
+    // });
+}
+
+/**
  * Decrement,
  * @param {Item[]} data 
  */
-function decrement(el, data) {
+function decrement(data, el) {
     let index = data.indexOf(el)
     data.splice(index, 1);
+
+    render();
 }
 
 /**
@@ -123,19 +193,6 @@ function save(data) {
 function load() {
     const json = window.localStorage.getItem(DATA_KEY);
     const data = JSON.parse(json) || [];
+    render(data);
     return data;
-}
-
-/**
- * 画面更新
- */
-function render() {
-
-    countSelectedSeats();
-    changePrices();
-    changeTime();
-
-    seatCount.innerHTML = seatSum;
-    totalPrice.innerHTML = `$${price}`;
-    time.innerHTML = startTime;
 }
