@@ -103,13 +103,8 @@ function getMoviePrice(name) {
  * @param {Item[]} data 
  */
 function decrement(el, data) {
-    
-    data.forEach(v => {
-        if(v === el) {
-            let index = data.indexOf(el)
-            data.splice(index, 1);
-        }
-    });
+    let index = data.indexOf(el)
+    data.splice(index, 1);
 }
 
 /**
