@@ -7,7 +7,7 @@ const totalPrice = document.querySelector('#price');
 const time = document.querySelector('#time');
 const seatsList = document.querySelector('.seats');
 /** @type {HTMLElement[]} */
-const seats = [...document.querySelectorAll('.jsSeat')];
+let seats;
 const movies = document.querySelector('#movies');
 let seatSum = 0;
 let price = 0;
@@ -27,6 +27,7 @@ function main() {
     newLineL('G');
     newLineL('H');
 
+    seats = [...document.querySelectorAll('.jsSeat')];
     selectedSeats = load();
 
     seats.forEach(box => box.addEventListener('click', e => {
@@ -159,10 +160,9 @@ function render(data) {
     totalPrice.innerHTML = `$${price}`;
     time.innerHTML = startTime;
 
-    // elList.innerHtml = "";
-    // data.forEach((record) => {
-    //     const el = createElItemSomehow(record);
-    //     elList.append(el);
+    // seatsList.innerHtml = "";
+    // data.forEach((seatNum) => {
+    //     (seatNum);
     // });
 }
 
@@ -174,7 +174,7 @@ function decrement(data, el) {
     let index = data.indexOf(el)
     data.splice(index, 1);
 
-    render();
+    render(data);
 }
 
 /**
