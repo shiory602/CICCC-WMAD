@@ -11,73 +11,85 @@
 
 <body>
     <div class="container">
-        <section class="first-wrap">
-            <form action="">
-                <label for="movies">Choose a movie</label>
-                <select name="movies" id="movies">
-                    <option value="" selected>-- Please choose an option --</option>
-                    <option value="avengers">Avengers: Endgame - $10</option>
-                    <option value="joker">Joker - $12</option>
-                    <option value="toyStory">Toy Story 4 - $8</option>
-                    <option value="theLionKing">The Lion King - $9</option>
-                </select>
-            </form>
-        </section>
-        <section class="middle-wrap">
-            <ul>
-                <li>
-                    <h4>Seats:<span id="seatCount"></span></h4>
-                </li>
-                <li>
-                    <h4>Price:<span id="price"></span></h4>
-                </li>
-                <li>
-                    <h4>Time:<span id="time"></span></h4>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <div class="box available"></div>
-                    <span>Available</span>
-                </li>
-                <li>
-                    <div class="box sold"></div>
-                    <span>Sold</span>
-                </li>
-                <li>
-                    <div class="box selected"></div>
-                    <span>Selected</span>
-                </li>
-            </ul>
-        </section>
-        <section class="bottom-wrap">
-            <div class="screen">
-                <h6>SCREEN</h6>
-            </div>
-            <div class="seats-box">
-                <div class="alpha">
-                    <h4>A</h4>
-                    <h4>B</h4>
-                    <h4>C</h4>
-                    <h4 class="gap">D</h4>
-                    <h4>E</h4>
-                    <h4>F</h4>
-                    <h4>G</h4>
-                    <h4>H</h4>
+        <header>
+            <a href="index.html"><img src="./img/logo_transparent.png" alt="logo" width="200px"></a>
+            <h1>Select seats</h1>
+        </header>
+        <main>
+            <section class="lists">
+                <ul>
+                    <li>
+                        <form action="">
+                            <label for="movies">Choose a movie: </label>
+                            <select name="movies" id="movies">
+                                <option value="" selected>-- Please choose an option --</option>
+                                <option value="avengers">Avengers: Endgame - $10</option>
+                                <option value="joker">Joker - $12</option>
+                                <option value="toyStory">Toy Story 4 - $8</option>
+                                <option value="theLionKing">The Lion King - $9</option>
+                            </select>
+                        </form>
+                    </li>
+                    <li>
+                        <h4>Seats:<span id="seatCount"></span></h4>
+                    </li>
+                    <li>
+                        <h4>Price:<span id="price"></span></h4>
+                    </li>
+                    <li>
+                        <h4>Time:<span id="time"></span></h4>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="box-item">
+                        <div class="box available"></div>
+                        <span>Available</span>
+                    </li>
+                    <li class="box-item">
+                        <div class="box sold"></div>
+                        <span>Sold</span>
+                    </li>
+                    <li class="box-item">
+                        <div class="box selected"></div>
+                        <span>Selected</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="theater">
+                <div class="screen">
+                    <h6>SCREEN</h6>
                 </div>
-                <div class="seats"></div>
-                <div class="alpha">
-                    <h4>A</h4>
-                    <h4>B</h4>
-                    <h4>C</h4>
-                    <h4 class="gap">D</h4>
-                    <h4>E</h4>
-                    <h4>F</h4>
-                    <h4>G</h4>
-                    <h4>H</h4>
+                <div class="seats-box">
+                    <div class="alpha">
+                        <h4>A</h4>
+                        <h4>B</h4>
+                        <h4>C</h4>
+                        <h4 class="gap">D</h4>
+                        <h4>E</h4>
+                        <h4>F</h4>
+                        <h4>G</h4>
+                        <h4>H</h4>
+                    </div>
+
+                    <div class="seats"></div>
+
+                    <div class="alpha">
+                        <h4>A</h4>
+                        <h4>B</h4>
+                        <h4>C</h4>
+                        <h4 class="gap">D</h4>
+                        <h4>E</h4>
+                        <h4>F</h4>
+                        <h4>G</h4>
+                        <h4>H</h4>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+        <footer>
+            <h6>Copyright © 2021 SHIORI SUZUKI</h6>
+        </footer>
     </div>
 
     <script src="./js/main.js"></script>

@@ -1,30 +1,23 @@
+@import 'reset';
+
 body {
     width: 100%;
     margin: 100px auto;
     text-align: center;
 }
 
-.first-wrap {
-    margin: 50px auto;
+main {
+    width: 100%;
+    margin: 18px auto;
+    display: block;
 
-    form {
-        font-size: 2.2rem;
-        font-weight: 700;
-        line-height: 2.2rem;
-
-        label {
-            display: block;
-            text-shadow: 5px 3px 3px rgba($color: $white-color, $alpha: 0.4);
-        }
+    .lists {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 200px;
+        display: flex;
+        justify-content: space-evenly;
     }
-}
-
-.middle-wrap {
-    width: 800px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-evenly;
-
 
     ul {
         list-style: none;
@@ -33,6 +26,12 @@ body {
             text-align: left;
             line-height: 1.7rem;
 
+
+            form {
+                margin-top: 10px;
+                line-height: 1.2rem;
+            }
+
             h4 {
                 font-weight: 600;
 
@@ -40,33 +39,36 @@ body {
                     padding-left: 15px;
                     font-size: 1.2rem;
                     color: $white-color;
-                    text-shadow: 5px 3px 3px rgba($color: $black-color, $alpha: 0.8);
+                    text-shadow: 5px 3px 3px rgba($color: $main-color, $alpha: 0.8);
                 }
             }
 
             .box {
                 display: inline-block;
-                box-shadow: 2px 3px 3px rgba($color: $black-color, $alpha: 0.8);
+                box-shadow: 2px 3px 3px rgba($color: $main-color, $alpha: 0.8);
             }
 
             span {
                 padding-left: 10px;
             }
         }
-    }
 
+        .box-item {
+            margin: 20px auto;
+        }
+    }
 }
 
-.bottom-wrap {
-    width: 1000px;
-    margin: 50px auto;
+
+.theater {
+    width: 100%;
+    margin: 0px auto;
     text-align: center;
 
     .screen {
-        margin-bottom: 20px;
+        margin: 0 auto 20px;
 
         h6 {
-            width: 250px;
             margin: 0 auto;
         }
     }
@@ -80,7 +82,7 @@ body {
     .alpha {
 
         h4 {
-            margin: 4px 30px;
+            margin: 7px 30px;
             width: 20px;
         }
 
@@ -103,4 +105,149 @@ body {
     .gap {
         margin-bottom: 20px;
     }
+}
+
+// index.html /////////////////////////////////////////
+
+header {
+
+    nav {
+        background-color: $main-color;
+        height: 35px;
+        margin: 10px auto;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            list-style-type: none;
+
+            li {
+                margin: 0 35px;
+            }
+
+        }
+
+    }
+}
+
+.section-titles {
+    text-align: left;
+    margin: 76px auto;
+
+    h2 {
+        width: 100%;
+        padding: 12px;
+        background-color: rgba($color: $white-color, $alpha: 0.1);
+        box-shadow: 5px 5px 5px rgba($color: $main-color, $alpha: 0.8);
+    }
+}
+
+.movies {
+    margin: 40px;
+
+    h4,
+    p {
+        font-size: 0.7rem;
+    }
+}
+
+.films {
+    box-shadow: 5px 5px 5px rgba($color: $main-color, $alpha: 0.8);
+    background-color: $main-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: auto;
+    scroll-snap-type: x;
+}
+
+.film-item {
+    margin: 5px 28px;
+    scroll-snap-align: center;
+}
+
+.genres {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .genre-item {
+        margin: 5px;
+    }
+}
+
+// movie detail /////////////////////////////////
+.main-detail {
+    padding: 80px;
+}
+.movie-detail {
+    width: 100%;
+    margin: 72px auto;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#movie-title {
+    letter-spacing: 0.025em;
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-shadow: 0 5px 3px $light-color;
+    text-transform: uppercase;
+}
+
+.movie-detail-description {
+    width: 40%;
+    text-align: left;
+    text-shadow: 0 2px 3px $light-color;
+
+
+    #category-list {
+        .category {
+            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            font-weight: 300;
+            padding: 4 8px;
+            background-color: rgba($color: $white-color, $alpha: 0.125);
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        .category:nth-of-type(n + 2) {
+            margin-left: 8px;
+        }
+    }
+
+
+
+    .info {
+        padding: 8px 0;
+
+        #release-date {
+            font-size: 0.8rem;
+        }
+
+        #vote-average {
+            font-size: 0.8rem;
+            margin-left: 24px;
+        }
+    }
+
+
+
+    p {
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+    }
+}
+
+.movie-detail-bg img {
+    width: 100%;
+}
+
+.movie-detail-trailer {
+    margin-top: 36px;
 }
