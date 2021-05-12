@@ -1,0 +1,178 @@
+# React
+> Facebook社が開発したUIライブラリ
+> UIを作るためのコンポーネント（見た目がわかりやすい）
+> コンポーネントを組み合わせてWebの画面を作る
+
+
+## Web開発の最新化
+- モジュール化
+カプセル化(Encapsulated)することで機能をひとまとまりにする
+- 宣言(state)を管理しやすい
+DOMを簡単に操作できる
+- 効率化(Efficient)
+DOM操作はjQueryよりも効率的になる
+
+### React vs Angular
+Angular
+フレームワークであり完全なソリューション
+- React
+ライブラリでありビューのレンダリングとビューの確認のみを処理する
+他のAPIを使う必要がある
+
+
+## 画面描画
+
+ブラウザはDOM(Document Object Model)を使ってHTMLという文書（ドキュメント）を画面に描画するが、DOMを直接変更して再描画するのは複雑な処理となる。
+
+### 仮想DOM(Virtual DOM)
+ブラウザのDOMの状態をJavaScriptのオブジェクトとして管理することでブラウザに負荷をかけずに効率の良い再描画（Rendering）をするようにする。
+
+**Reactのコンポーネント = 「状態を持つUI」**
+
+### 差分描画
+Reactを使うことで仮想DOMで差分のみを描画する
+実際のDOMには関連する箇所だけが再描画される
+
+
+
+# JSX
+- JavaScriptの拡張言語 ≠ テンプレート言語（vue.js）
+- HTMLのマークアップを記述 + JavaScriptの構文が使える
+- JSXは最終的にReact要素を生成する
+
+## Why to use JSX?
+> ReactはReact.createElementで要素を生成するが、構文がわかりにくい。JSXをすることで勝手にコンパイルされる。
+> ２つの構文は同じ結果となる
+
+- Without JSX
+```js
+React.createElement(
+    'button',
+    {className: 'btn-blue'},
+    'Click me!'
+)
+```
+- With JSX
+```js
+<button className={'btn-blue'}>
+    Click me!
+</button>
+```
+
+## JSX Component Based
+
+- Building block of React
+React helps us break up applications into reusable, self-contained components
+- Data + UI
+Components combine view logic, user interface and data
+- Composition
+We can combine multiple components to form complex apps
+
+### How component works
+
+例その１
+1. import React library この構文は必ず必要
+```js
+import React from 'react';
+```
+2. return文の中は基本的にHTMLと同じ
+```js
+const BlueButton = () => {
+    return (
+        <button className={'btn-blue'}>
+            Click me!
+        </button>
+    )
+}
+
+export default BlueButton
+```
+
+- JSXは`-`を認識しないのでキャメルケースで記述する
+- `{}`内で変数を扱える（JSでいう`${}`）
+- 文法エラーが起きないよう必ず閉じタグ`/>`が必要
+
+例その２
+```js
+import React from 'react';
+
+const Thumbnail = () => {
+    const caption = 'cats'
+    const imagePath = './img/cats.png'
+
+    return (
+        <div>
+            <p>{caption}</p>
+            <img src={imagePath} alt={'photo of cats'} />
+        </div>
+    )
+}
+```
+
+### Component Hierarchy(階層構造)
+1. JSXは必ず階層構造になり、最上位コンポーネントは並列にできない
+```js
+// Error
+return (
+    <p>Hello World!</p>
+    <p>How are you?</p>
+)
+```
+2. JSXの特殊タグである`React.Fragment`で囲むとHTMLタグと同じように記述できる。
+```js
+// OK
+return (
+    <React.Fragment>
+        <p>Hello World!</p>
+        <p>How are you?</p>
+    </React.Fragment>
+)
+```
+3. `React.Fragment`は省略可能
+```js
+// OK
+return (
+    <>
+        <p>Hello World!</p>
+        <p>How are you?</p>
+    </>
+)
+```
+**最上位タグが１つだけだった場合は必要ない！**
+
+
+
+# Component
+JSXを返す関数をコンポーネントと呼ぶ
+
+## functional component
+```js
+import React from "react";
+
+function Greet({ name }) {
+    return <p>Hello {name} </p>;
+}
+
+const HiYelim = (
+
+)
+```
+
+## binding（結ぶ・くくりつける）
+
+## setState
+this.setState({foo: "bar"}, () => {
+    // Do something callback
+})
+
+
+***
+
+# LifeCycles
+Methods that exist in react to execute function at the right timing of a react component life.
+なんども実行されることがあるのでそれが正常なタイミングに起きるようにする。
+[ライフサイクル図](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
+
+参照：
+[Reactチュートリアル1：犬画像ギャラリーを作ろう](https://zenn.dev/likr/articles/6be53ca64f29aa035f07)
