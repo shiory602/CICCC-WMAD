@@ -34,7 +34,8 @@ export class CreateProfile extends React.Component {
   state = {
     name: "Alice",
     age: 17,
-    address: "Canada"
+    address: "Canada",
+    canadian: false
   };
 
   // Updating states
@@ -43,19 +44,21 @@ export class CreateProfile extends React.Component {
       name: "Kana",
       age: 19,
       address: "Japan"
+      canadian: !this.state.canadian
     });
   };
 
   render() {
     return (
-      <div>
+      <>
         <p>
           Hello, my name is {this.state.name} from {this.state.address}.
         </p>
         <p>I am {this.state.age} years old.</p>
         <p>Nice to meet you!</p>
+        <p>{this.state.canadian ? "True" : "False"}</p>
         <button onClick={this.updateState}>ChangeCard</button>
-      </div>
+      </>
     );
   }
 }

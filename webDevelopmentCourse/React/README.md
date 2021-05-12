@@ -2,7 +2,7 @@
 > Facebook社が開発したUIライブラリ
 > UIを作るためのコンポーネント（見た目がわかりやすい）
 > コンポーネントを組み合わせてWebの画面を作る
-
+[Sandboxで簡単にReact操作](https://codesandbox.io/)
 
 ## Web開発の最新化
 - モジュール化
@@ -39,6 +39,7 @@ Reactを使うことで仮想DOMで差分のみを描画する
 - JavaScriptの拡張言語 ≠ テンプレート言語（vue.js）
 - HTMLのマークアップを記述 + JavaScriptの構文が使える
 - JSXは最終的にReact要素を生成する
+> 使うのにはBabelが必要
 
 ## Why to use JSX?
 > ReactはReact.createElementで要素を生成するが、構文がわかりにくい。JSXをすることで勝手にコンパイルされる。
@@ -67,8 +68,19 @@ React helps us break up applications into reusable, self-contained components
 Components combine view logic, user interface and data
 - Composition
 We can combine multiple components to form complex apps
+ファイル名は`.js`か`.jsx`を使う。
 
 ### How component works
+コンポーネントには親と子がある。
+- 親コンポーネントはimportする
+- 子コンポーネントはexportする
+```jsx
+import React from "react";
+
+class About extends React.Component ...
+
+export default About
+```
 
 例その１
 1. import React library この構文は必ず必要
@@ -110,7 +122,7 @@ const Thumbnail = () => {
 ```
 
 ### Component Hierarchy(階層構造)
-1. JSXは必ず階層構造になり、最上位コンポーネントは並列にできない
+1. JSXは必ず階層構造になり、最上位コンポーネントは並列にできない。`return`で返せるのは１つのコンポーネントのみ。
 ```js
 // Error
 return (
@@ -144,6 +156,7 @@ return (
 
 # Component
 JSXを返す関数をコンポーネントと呼ぶ
+　コンポーネントには**Class Component**と**Functional Component**がある
 
 ## class component
 JavaScriptクラスで書かれたコンポーネント
@@ -161,20 +174,75 @@ class Welcome extends React.Component {
 3. コンポーネントの中で即座に更新したい時（ライフサイクル）
 **現在はhooksがある。**
 
+```jsx
+class About extends React.Component {
+    // Initializing
+    state = {
+        name: "Alice"
+    };
+    // using data in UI
+    render() {
+        <p>Name is {this.state.name}</p>
+    }
+}
+```
+
+クラスコンポーネントの中で`this`を使った場合、`this`はクラスを指す。
+
 ## functional component
-JavaScript関数で書かれたコンポーネント
+Layoutをするのにオススメのコンポーネント
+JavaScript関数で書かれたコンポーネントでアロー関数も使える。ライフサイクルは使えない。
+別名：Stateless component
 ```js
 function Welcome(props) {
     return <h1>Hello, {props.name}</h1>
 }
 ```
+### setState
+functional componentの中では`this.state.name`のように変更はできない。
+```js
+updateNameStudent = () => {
+    this.setState({
+        name: "Dodo"
+    })
+}
+```
+
+## Props
+It is an object with data that is passed between components
+全てのデータタイプを持つ
+Reactは一方通行で親から子にデータがいく
+```js
+// child comp
+function Welcome(props) {
+    return <h1>Hello, {props.name} </h1>
+}
+// parent comp
+function App() {
+    return (
+        <div>
+            <Welcome name="Sara" />
+            <Welcome name="Alice" />
+            <Welcome name="Eddy" />
+        </div>
+    );
+}
+```
+## Props in functional component
+String以外では常に`{}`が必要
+```js
+// child comp
+const Welcome = props => {
+    react (
+        <div>Hello, {props.name}.</div>
+    )
+    name="Sara"
+}
+```
+
 
 ## binding（結ぶ・くくりつける）
 
-## setState
-this.setState({foo: "bar"}, () => {
-    // Do something callback
-})
 
 
 ***
@@ -184,8 +252,7 @@ Methods that exist in react to execute function at the right timing of a react c
 なんども実行されることがあるのでそれが正常なタイミングに起きるようにする。
 [ライフサイクル図](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
-componentWillMount
-
+## componentWillMount
 Immediately before initial rendering
 
 
