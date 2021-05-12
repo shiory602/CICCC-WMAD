@@ -145,17 +145,28 @@ return (
 # Component
 JSXを返す関数をコンポーネントと呼ぶ
 
-## functional component
+## class component
+JavaScriptクラスで書かれたコンポーネント
 ```js
-import React from "react";
-
-function Greet({ name }) {
-    return <p>Hello {name} </p>;
+class Welcome extends React.Component {
+    render() {
+        return <h1>Hello, {this.props.name}</h1>
+    }
 }
+```
+### class componentを使う理由
+（React 16.8以前の理由）
+1. コンポーネントのなかでオブジェクトの宣言をしたい時
+2. コンポーネントのなかでライフサイクルを使う時
+3. コンポーネントの中で即座に更新したい時（ライフサイクル）
+**現在はhooksがある。**
 
-const HiYelim = (
-
-)
+## functional component
+JavaScript関数で書かれたコンポーネント
+```js
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>
+}
 ```
 
 ## binding（結ぶ・くくりつける）
@@ -172,6 +183,46 @@ this.setState({foo: "bar"}, () => {
 Methods that exist in react to execute function at the right timing of a react component life.
 なんども実行されることがあるのでそれが正常なタイミングに起きるようにする。
 [ライフサイクル図](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
+componentWillMount
+
+Immediately before initial rendering
+
+
+
+componendDidMount
+
+Immediately after initial rendering
+
+
+
+componentWillReceiveProps
+
+When component receives new props
+
+
+
+shouldComponentUpdate
+
+Before rendering, after receiving new props or state (can return false to prevent rendering)
+
+
+
+componentWillUpdate
+
+Before rendering, after receiving new props or state
+
+
+
+componentDidUpdate
+
+After component updates are flushed to DOM
+
+
+
+componentWillUnmount
+
+Immediately before removing component from DOM
 
 
 参照：
