@@ -10,6 +10,7 @@ Instructions
 5. Also make a button tag, and make it so that the Name changes text
 (anything is fine) when button is pressed
 
+App.js
 ```js
 import React from "react";
 // Add CSS if you want to change design
