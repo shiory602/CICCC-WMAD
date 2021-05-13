@@ -1,8 +1,42 @@
+# Using React
+## How to Set Up create-react-app
+1. Instal Homebrew
+2. Instal nodebrew
+3. Instal node
+4. nodeの環境パスを通す(ターミナルの再起動を忘れずに)
+
+### ファイルの種類
+- src
+    - 開発用のファイルが格納される
+    - ReactコンポーネントのJSXファイルなどはここに置く
+- public
+    - 静的ファイルが格納される
+    - htmlファイルや画像ファイルなど
+- build
+    - 本番用ファイル
+    - npm run buildコマンドで生成される
+
+### Reactを使う
+- npm start
+    - ローカルサーバーを起動してReactアプリを確認できる
+    - ホットリロード（保存で自動更新）に対応
+- npm run build
+    - 本番用ファイルを生成してbuildディレクトリに出力
+    - srcとpublicのファイルを１つにまとめる（バンドル）
+- npm run eject: 基本使わない
+    - BabelやWebpackの設定を変えたいときに使う
+
+
+## Sandbox
+[Sandboxで簡単にReact操作](https://codesandbox.io/)
+
+***
+
+
 # React
 > Facebook社が開発したUIライブラリ
 > UIを作るためのコンポーネント（見た目がわかりやすい）
 > コンポーネントを組み合わせてWebの画面を作る
-[Sandboxで簡単にReact操作](https://codesandbox.io/)
 
 ## Web開発の最新化
 - モジュール化
@@ -132,6 +166,7 @@ return (
 ```
 2. JSXの特殊タグである`React.Fragment`で囲むとHTMLタグと同じように記述できる。
 ```js
+import React, { Fragment } from "react";
 // OK
 return (
     <React.Fragment>
@@ -215,7 +250,7 @@ Reactは一方通行で親から子にデータがいく
 ```js
 // child comp
 function Welcome(props) {
-    return <h1>Hello, {props.name} </h1>
+    return <h1>Hello, {props.name}.</h1>
 }
 // parent comp
 function App() {
@@ -227,18 +262,32 @@ function App() {
         </div>
     );
 }
+// <h1>Hello, Sara.</h1>
+// <h1>Hello, Alice.</h1>
+// <h1>Hello, Eddy.</h1>
 ```
 ## Props in functional component
 String以外では常に`{}`が必要
 ```js
 // child comp
 const Welcome = props => {
-    react (
-        <div>Hello, {props.name}.</div>
+    return (
+        <div>
+            Hello, {props.name}.
+        </div>
     )
     name="Sara"
 }
 ```
+## Children props
+```js
+<Clock>
+</Clock>
+```
+
+
+
+
 
 
 ## binding（結ぶ・くくりつける）
@@ -294,3 +343,4 @@ Immediately before removing component from DOM
 
 参照：
 [Reactチュートリアル1：犬画像ギャラリーを作ろう](https://zenn.dev/likr/articles/6be53ca64f29aa035f07)
+
