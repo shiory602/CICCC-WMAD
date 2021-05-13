@@ -1,25 +1,18 @@
-import logo from './logo.svg';
+// parent
+import Box from './Box.jsx';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Box
+      imageUrl="https://img.icons8.com/ios-filled/50/000000/maxcdn.png"
+      text="MDN"
+      />
+      <Box
+      imageUrl="https://img.icons8.com/pastel-glyph/64/000000/download-from-cloud--v1.png"
+      text="Download"
+      />
     </div>
   );
 }
-
-export default App;
