@@ -1,5 +1,5 @@
 import React from "react";
-// import './App.css';
+import './App.css';
 
 export default function App() {
   return (
@@ -7,23 +7,31 @@ export default function App() {
   );
 }
 
+
 class Clickevent extends React.Component {
   
   state = {
-      name: "Shiori Suzuki"
+    Greeting: "Hello, how are you?"
   };
 
-  updateName = () => {
-      this.setState({
-          name: "Sae"
-      });
+  Leaving = () => {
+    this.setState({
+      Greeting: "See you soon!"
+    })
+  }
+
+  Coming = () => {
+    this.setState({
+      Greeting: "Hello, how are you?"
+    })
   }
 
   render() {
       return (
           <>
-              <h2>My name is {this.state.name}</h2>
-              <button onClick={this.updateName}>Click me!</button>
+              <h1 class="sentence">{this.state.Greeting}</h1>
+              <button onClick={this.Coming}>Hi!</button>
+              <button onClick={this.Leaving}>Bye!</button>
           </>
       );
   }
