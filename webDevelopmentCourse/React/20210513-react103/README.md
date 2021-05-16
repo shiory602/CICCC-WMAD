@@ -107,6 +107,64 @@ button:active {
 }
 ```
 
+Another solution: Using function comp as a parent and class comp as a child
+App.js
+```js
+// React から　useStateをインポート (関数コンポーネントにてstateが必要な時に使う)
+import React, {useState} from "react";
+import './App.css';
+import Greeting from "./Greeting";
+
+
+
+export default function App() {
+  // 新しいstate変数である count を宣言する　(関数コンポーネントにてstateが必要な時に使う)
+  const [greet, setGreet] = useState("Hello");
+
+  const toggleLeaving = () => {
+    setGreet("You are leaving")
+  };
+
+  const toggleComing = () => {
+    setGreet("You are coming")
+  }
+
+  return (
+    <div className="App">
+      <Greeting 
+        greet={greet}
+        toggleLeaving= {toggleLeaving}
+        toggleComing= {toggleComing}
+      />
+    </div>
+  );
+}
+```
+
+Greeting.jsx
+```js
+// child
+import React from "react";
+
+class Greeting extends React.Component {
+constructor(props){
+    super(props);
+}
+
+render() {
+    return (
+        <>
+            <h1 class="sentence">{this.props.greet}</h1>
+            <button onClick={this.props.toggleComing}>Hi!</button>
+            <button onClick={this.props.toggleLeaving}>Bye!</button>
+        </>
+    );
+}
+}
+
+export default Greeting;
+```
+
 
 
 Challenge 2

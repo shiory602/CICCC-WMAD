@@ -2,7 +2,6 @@
 import React, {useState} from "react";
 import './App.css';
 import Greeting from "./Greeting";
-import loading from "./img/loading.gif"
 
 
 
