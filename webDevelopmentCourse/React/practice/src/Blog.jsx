@@ -49,7 +49,7 @@ const Blog = () => {
     // }
 
     // render() {
-        const authorName = 'Torahack';
+        // const authorName = 'Torahack';
         return (
             <>
                 <Article
