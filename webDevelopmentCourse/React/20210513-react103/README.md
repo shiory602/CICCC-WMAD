@@ -15,6 +15,7 @@ tag, add a conditional operator to show different text using the
 boolean state you made in no.3.
 5. Make 2 buttons to update the boolean state.
 
+### Solution1
 ![challenge1](./2021-05-13.png)
 
 ### App.js
@@ -107,15 +108,14 @@ button:active {
 }
 ```
 
-Another solution: Using function comp as a parent and class comp as a child
+### solution2
+Using function comp as a parent, and class comp as a child
 App.js
 ```js
 // React から　useStateをインポート (関数コンポーネントにてstateが必要な時に使う)
 import React, {useState} from "react";
 import './App.css';
 import Greeting from "./Greeting";
-
-
 
 export default function App() {
   // 新しいstate変数である count を宣言する　(関数コンポーネントにてstateが必要な時に使う)
@@ -147,9 +147,6 @@ Greeting.jsx
 import React from "react";
 
 class Greeting extends React.Component {
-constructor(props){
-    super(props);
-}
 
 render() {
     return (
