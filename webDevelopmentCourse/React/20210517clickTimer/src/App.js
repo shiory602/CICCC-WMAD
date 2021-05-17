@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'; // useStateを使うために{}でセット
 import './App.css';
 import Greeting from "./Greeting";
 import StudentList from './StudentList';
 import loadingImg from './img/loading.gif'
 
 export default function App() {
-    // 新しいstate変数である count を宣言する　(関数コンポーネントにてstateが必要な時に使う)
+    // 新しいstate変数である greet を宣言する　(関数コンポーネントにてstateが必要な時に使う)
     const [greet, setGreet] = useState("Hello");
-
+    // stateを変更するための関数をセット
     const toggleLeaving = () => {
-      setGreet("You are leaving")
+      setGreet("You are leaving");
     };
-  
     const toggleComing = () => {
-      setGreet("You are coming")
+      setGreet("You are coming");
     }
   
   return (
