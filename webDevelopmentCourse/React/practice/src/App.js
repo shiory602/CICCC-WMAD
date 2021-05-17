@@ -9,7 +9,6 @@ export default function App() {
     <div className='App'>
       <StudentList
         img={loadingImg}
-        // list={Tick}
       />
     </div>
   );
