@@ -18,7 +18,7 @@ boolean state you made in no.3.
 ### Solution1
 ![challenge1](./2021-05-13.png)
 
-### App.js
+App.js
 ```js
 import React from "react";
 import './App.css';
@@ -69,7 +69,7 @@ class Clickevent extends React.Component {
 }
 ```
 
-### App.css
+App.css
 ```css
 #root {
   text-align: center;
@@ -182,3 +182,77 @@ setTimeOut, to set data to that state)
 
 Deliverables
 Submit your codesandbox link in google classroom!
+
+### Solution
+App.js
+```js
+import React from 'react';
+import StudentList from './StudentList';
+import loadingImg from './img/loading.gif'
+
+export default function App() {
+
+  return (
+    <div className='App'>
+      <StudentList
+        img={loadingImg}
+      />
+    </div>
+  );
+}
+```
+
+StudentList.jsx
+```js
+import React from "react";
+
+class StudentList extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            content: <img src={this.props.img} alt='loading' />,
+            listItem: [
+                {
+                    id: 1,
+                    name: 'Alice',
+                },
+                {
+                    id: 2,
+                    name: 'John',
+                },
+                {
+                    id: 3,
+                    name: 'Eddy',
+                },
+            ],
+        }
+    }
+    
+
+    componentDidMount() {
+        this.timer = setInterval(
+            () => this.setState({
+                content: this.state.listItem.map(item => (
+                <li key={item.id}>{item.name}</li>
+                ))
+            }),
+        3000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    }
+
+        
+    render() {
+        return (
+            <div id='main'>
+                {this.state.content}
+            </div>
+        );
+    }
+}
+
+
+export default StudentList;
+```
