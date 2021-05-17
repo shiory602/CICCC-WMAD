@@ -18,6 +18,14 @@ class StudentList extends React.Component {
                     id: 3,
                     name: 'Eddy',
                 },
+                {
+                    id: 4,
+                    name: 'Sarah',
+                },
+                {
+                    id: 5,
+                    name: 'Olivia',
+                },
             ],
         }
     }

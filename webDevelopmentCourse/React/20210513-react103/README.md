@@ -29,15 +29,6 @@ export default function App() {
   );
 }
 
-function MeetGreeting(props) {
-return <h1>Welcome!</h1>;
-}
-
-function LeaveGreeting(props) {
-return <h1>See you soon.</h1>;
-}
-
-
 
 class Clickevent extends React.Component {
   
