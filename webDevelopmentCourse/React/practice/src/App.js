@@ -18,6 +18,7 @@ export default function App() {
   
   return (
     <div className='App'>
+      <h3>challenge 1</h3>
       <Greeting 
         greet={greet}
         toggleLeaving= {toggleLeaving}
@@ -26,7 +27,9 @@ export default function App() {
       <br />
       <br />
       <br />
+      <div className='line'> </div>
       <br />
+      <h3>challenge 2</h3>
       <StudentList
         img={loadingImg}
       />

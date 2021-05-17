@@ -3,6 +3,21 @@
   font-size: 18px;
 }
 
+.App {
+  width: 600px;
+  margin: auto;
+  border: 1px solid brown;
+}
+
+h3 {
+  text-align: left;
+  margin-left: 50px;
+}
+
+.line {
+  border-bottom: 1px solid brown;
+}
+
 .sentence {
   width: 400px;
   margin: 10px auto;
@@ -32,4 +47,15 @@ button:active {
   box-shadow: none;
   position: relative;
   top: 5px;
+}
+
+#main {
+  margin-bottom: 50px;
+}
+
+li {
+  width: 200px;
+  margin: auto;
+  font-size: 1.7rem;
+  text-align: left;
 }
