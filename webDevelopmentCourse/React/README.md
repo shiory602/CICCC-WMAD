@@ -195,9 +195,19 @@ return (
 
 
 
+
+
+
+
 # Component
 JSXを返す関数をコンポーネントと呼ぶ
 　コンポーネントには**Class Component**と**Functional Component**がある
+## コンポーネントは分ける
+- １ファイル＝１コンポーネントにすべし
+- なぜコンポーネントを分けるのか
+    - 責務を明確にする（なんのためのパーツか）
+    - 大規模アプリでも管理しやすくする
+    - 再利用する
 
 ## class component
 JavaScriptクラスで書かれたコンポーネント
@@ -249,7 +259,112 @@ updateNameStudent = () => {
 }
 ```
 
-## Props
+# JavaScriptのモジュール機能
+- プログラムをモジュールという単位に分割する
+- 原則は１ファイル＝１モジュール
+- 必要な時に必要なモジュールのみ読み込む
+```js
+import Article from "./components/Article";
+
+function App() {
+    return (
+        <Article
+        title={'タイトル'}
+        content={'中身'}
+        />
+    );
+}
+```
+
+## default export
+名前なしエクスポート
+```js
+// アロー関数のdefault export
+const Title = (props) => {
+    return <h2>{props.title}</h2>
+};
+export default Title;
+
+// 名前付き関数のdefault export
+export default function Title(props) {
+    return <h2>{props.title}</h2>
+}
+```
+推奨されるexport方法
+１ファイル＝１export
+一度宣言したアロー関数をdefault export
+名前付き関数宣言と同時にdefault export
+
+## default import
+名前なしimport
+```js
+// Article.jsx(export元)
+const Article = (props) => {
+    return (
+        <div>
+            <h2>{props.title}</h2>
+            <p>{props.content}</p>
+        </div>
+    );
+};
+export default Article;
+
+// App.jsx(imiport先)
+import Article from "./components/Article";
+function App() {
+    return (
+        <Article
+        title={'タイトル'}
+        content={'コンテント'}
+        />
+    )
+}
+```
+- default exportしたモジュールをそのまま読み込む
+- importモジュール名from'ファイルパス'
+
+## 名前付きexport
+```js
+// helper.js 便利な関数を集めたファイル
+export const addTax = (price) => {
+    return Math.floor(price *1.1)
+}
+export const getWild = () => {
+    console.log('Get wild and touch')
+}
+
+// index.js
+export {default as Article} from './Aricle'
+export {default as Content} from './Content'
+export {default as Title} from './Title'
+```
+defaultという名前のモジュールをTitleという名前でexport
+- １ファイルから復習モジュールをexportしたい時
+- Reactではエントリポイント（各コンポーネントを読み込む場所をindex.jsにまとめる）でよく使う
+- エントリポイントでは別名exportも併用する
+
+## 名前付きimport
+```js
+import {Content, Title} from "./index";
+const Article = (props) => {
+    return (
+        <Article
+            title={'タイトル'}
+            content={'コンテント'}
+        />
+    )
+}
+```
+- １ファイルから複数モジュールを読み込む
+- エントリポイントから複数コンポーネントを読み込む
+
+
+
+
+
+***
+
+# Props
 It is an object with data that is passed between components
 全てのデータタイプを持つ
 Reactは一方通行で親から子にデータがいく
