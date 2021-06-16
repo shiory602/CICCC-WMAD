@@ -1,13 +1,13 @@
 import React from 'react';
-import  MovieContextProvider  from './context/Context';
+import  UserContextProvider  from './context/Context';
 
-import Movie from './Movie';
+import User from './User';
 
 function App() {
   return (
-      <MovieContextProvider>
-        <Movie />
-      </MovieContextProvider>
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
   );
 }
 

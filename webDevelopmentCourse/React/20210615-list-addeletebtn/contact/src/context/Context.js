@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MovieContext = React.createContext();
+const UserContext = React.createContext();
 
-export default class MovieContextProvider extends React.Component {
+export default class UserContextProvider extends React.Component {
     state = {
-        movieData: [],
-        movies: [
+        userData: [],
+        users: [
             {
                 id: '1',
                 title: 'Titanic'
@@ -21,12 +21,12 @@ export default class MovieContextProvider extends React.Component {
         ]
     }
 
-    fetchMovieData = () => {
+    fetchUserData = () => {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(json => {
-            this.setState({movieData: json});
-            console.log(this.state.movieData);
+            this.setState({userData: json});
+            console.log(this.state.userData);
         })
         .catch((erro) => {
             console.log(`this is a error ${erro}`);
@@ -34,16 +34,16 @@ export default class MovieContextProvider extends React.Component {
     }
 
     componentDidMount() {
-        this.fetchMovieData();
+        this.fetchUserData();
     }
 
     render() {
         return (
-            <MovieContext.Provider value={this.state}>
+            <UserContext.Provider value={this.state}>
                 { this.props.children }
-            </MovieContext.Provider>
+            </UserContext.Provider>
         )
     }
 }
 
-export const MovieContextConsumer = MovieContext.Consumer;
+export const UserContextConsumer = UserContext.Consumer;
