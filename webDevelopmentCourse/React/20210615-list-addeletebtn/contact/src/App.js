@@ -1,10 +1,13 @@
-import './App.css';
+import React from 'react';
+import  MovieContextProvider  from './context/Context';
+
+import Movie from './Movie';
 
 function App() {
   return (
-    <div className="App">
-      hi
-    </div>
+      <MovieContextProvider>
+        <Movie />
+      </MovieContextProvider>
   );
 }
 
