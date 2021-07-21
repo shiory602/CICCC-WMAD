@@ -1,0 +1,3 @@
+exports.Greeting = () => {
+    return 'Hello'
+}
