@@ -40,7 +40,7 @@ entry point: (index.js)
 test command:
 git repository:
 keywords:
-author: techacademy
+author: your name
 license: (ISC)
 ```
 最後にokかを聞かれるのでエンター
