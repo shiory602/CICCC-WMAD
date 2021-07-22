@@ -55,5 +55,16 @@ function doRequest(req, res) {
                 </html>
             `);
             break;
+        default:
+            res.end(
+                `<html>
+                <head>
+                <title>First node app</title>
+                </head>
+                <body>
+                <h1>404 Page not found</h1>
+                </body>
+                </html>`
+            )
     }
 }
