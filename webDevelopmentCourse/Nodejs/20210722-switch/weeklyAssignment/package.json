@@ -1,0 +1,12 @@
+{
+  "name": "weeklyassignment",
+  "version": "1.0.0",
+  "description": "practice to switch",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Shiori Suzuki",
+  "license": "ISC"
+}
