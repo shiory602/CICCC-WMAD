@@ -51,7 +51,7 @@ Is this ok? (yes)
 # npm startの設定
 package.jsonをインストールしたらnpmを使用してファイルやプロジェクトを実行してみる
 ### package.jsonの書き換え
-`start`の中には実行したいファイル名を入れる
+`start`の中には`node 実行したいファイル名`を入れる
 ```
 "scripts": {
     "start": "node node.js"
@@ -59,10 +59,15 @@ package.jsonをインストールしたらnpmを使用してファイルやプ�
 ```
 
 # nodemonのインストール
+Node.js を自動で再起動する
 ```
 npm install -g nodemon
 ```
 https://www.npmjs.com/package/nodemon
+### 実行方法
+```
+nodemon app.js
+```
 
 
 # require/exports
