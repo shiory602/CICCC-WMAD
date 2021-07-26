@@ -1,11 +1,14 @@
-const http = require('http')
-const hostname = '127.0.0.1';
-const port = 3000;
+const express = require("express")
+const app = express()
+const port = 3000
 
-http.createServer((request, response) => {
-    response.writeHead(200, {'Content-Type': 'text-plain'});
-    response.end('Hello world')
+// ルーティングの設定
+app.get("/", (req, res) => {
+    res.send('Hello World :)')
+    console.log("We have access to /")
 })
-.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+
+// http サーバーの起動
+app.listen(port, () => {
+    console.log(`Server running at http://${port}/`)
 })
