@@ -95,5 +95,7 @@ Use the following code to load files in the public folder
 ```js
 app.use(express.static('public'))
 ```
+
 ***
+
 Reference: [Express](http://expressjs.com/)
