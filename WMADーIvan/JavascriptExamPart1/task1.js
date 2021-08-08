@@ -5,5 +5,13 @@
 // tiles consists of uppercase English letters.
 
 let tiles = "AAB";
-let tiles = "AAABBC";
-let tiles = "V";
+tiles = "AAABBC";
+tiles = "V";
+
+let count;
+if (tiles == 1) {
+  count = 1;
+}
+console.log(count);
+
+// 
