@@ -85,7 +85,7 @@ Is this ok? (yes)
 ```
 
 # Other
-Configure the `npm start` script in packege.json
+Configure the `npm start` script in package.json
 ### Set up npm start.
 After installing package.json, try to run the files and projects using npm.
 ### Rewrite package.json.
