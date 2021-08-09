@@ -23,7 +23,22 @@ const server = http.createServer((request, response) => {
 ```
 - request: from client to server
 - response: from server to client
+
 In `createServer`, there is a function which is required when the `http.Server` object created by `createServer` is run as a server. When someone accesses that server, this function will be called.
+### header
+`ServerResponse` object, which manages the content of the reply from the server, has several methods for handling header information.
+- Set Header information
+```js
+response.setHeader( 'name', 'value' )
+```
+- Get Header information
+```js
+response.getHeader( 'name' );
+```
+- Write Header information
+```js
+response.writeHeader('code-number', 'message');
+```
 ## Listen
 The waiting state is done by calling the method "listen" in `http.Server`. It specifies the "listening port number" as an argument.
 ```js
