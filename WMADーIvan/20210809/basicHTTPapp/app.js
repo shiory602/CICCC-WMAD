@@ -24,11 +24,40 @@
 //  ----> shows ip address
 
 const http = require('http');
-console.log(http);
+const os = require('os');
+// console.log(http);
 
-function myCallback(rquest, result) {
+function myCallback(request, result) {
   // 200 is a http status message, just like 404? 200 says ok
   result.writeHead(200, { 'Content-Type': 'text/html' });
+  // console.log(request.url);
+
+  if (request.url != "") {
+    
+    switch (request.url) {
+      case '/api/arch':
+        result.write(os.arch());
+        break;
+      case '/api/cpu':
+        result.write(os.cpus());
+        break;
+      case '/api/ram':
+        result.write(os.totalmem());
+        break;
+      case '/api/hdd':
+        result.write(os.freemem());
+        break;
+      case '/api/hostname':
+        result.write(os.hostname());
+        break;
+      case '/api/ip':
+        result.write(os.networkInterfaces());
+        break;
+    }
+  }
+  result.end();
 }
 
-http.createServer(myCallback(request,result)).listen(8080);
+http.createServer(myCallback).listen(8080, ()=>{
+  console.log('Server starts')
+});
