@@ -25,8 +25,10 @@
 
 const http = require('http');
 
-const server = http.createServer((req, res) => {
-  server.end('test');
+const server = http.createServer(
+  (req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.end('test');
 })
 
 server.listen(3000, console.log('server starts'));
