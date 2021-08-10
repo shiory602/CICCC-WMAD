@@ -39,6 +39,15 @@ response.getHeader( 'name' );
 ```js
 response.writeHeader('code-number', 'message');
 ```
+### body
+- `.write` will output the text of the argument
+```js
+response.write('Hello');
+```
+- `.end` will output the text of the argument and exit.
+```js
+response.end()
+```
 ## Listen
 The waiting state is done by calling the method "listen" in `http.Server`. It specifies the "listening port number" as an argument.
 ```js
