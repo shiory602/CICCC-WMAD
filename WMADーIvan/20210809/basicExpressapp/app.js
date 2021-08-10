@@ -15,45 +15,32 @@ const express = require('express');
 var app = express();
 const os = require('os');
 
-let v;
-// var api = require('./routes/api');
-
-// app.use('/api', api);
-
-// const router = express.Router();
-
 app.get('/api', (req, res) => {
   res.send('Change the path.');
 });
 
 app.get('/api/arch', (req, res) => {
-  v = os.arch();
-  res.send(v);
+  res.send(os.arch());
 })
 
 app.get('/api/cpus', (req, res) => {
-  v = os.cpus();
-  res.send(v);
+  res.send(os.cpus());
 })
 
 app.get('/api/ram', (req, res) => {
-  v = os.totalmem();
-  res.send(v + '');
+  res.send(os.totalmem() + '');
 })
 
 app.get('/api/diskspace', (req, res) => {
-  v = os.freemem();
-  res.send(v + '');
+  res.send(os.freemem() + '');
 })
 
 app.get('/api/hostname', (req, res) => {
-  v = os.hostname();
-  res.send(v);
+  res.send(os.hostname());
 })
 
 app.get('/api/ipaddress', (req, res) => {
-  v = getLocalAddress();
-  res.send(v);
+  res.send(getLocalAddress());
 })
 
 app.listen(3000, () => {
