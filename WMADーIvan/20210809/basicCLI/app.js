@@ -1,0 +1,39 @@
+// Computer Architecture
+// Compute CPU's
+// Computer RAM (total and available)
+// Computer Disk Space (total and available)
+// Computer Hostname
+// Computer IP Address
+
+/*
+I should be able to call the application like this
+
+node yourapp.js -arch ----> shows architecture
+node yourapp.js -cpu ----> shows cpus
+node yourapp.js -ram----> shows ram
+node yourapp.js -hdd----> shows disk space
+node yourapp.js -hostname ----> shows hostname
+node yourapp.js -ip ----> shows ip address
+*/
+
+const os = require('os');
+switch (process.argv[2]) {
+  case '-arch':
+    console.log(os.arch());
+    break;
+  case '-cpu':
+    console.log(os.cpus());
+    break;
+  case '-ram':
+    console.log(os.totalmem());
+    break;
+  // case '-hdd':
+  //   console.log(os.);
+  //   break;
+  case '-hostname':
+    console.log(os.hostname());
+    break;
+  case '-ip':
+    console.log(os.networkInterfaces());
+    break;
+}
