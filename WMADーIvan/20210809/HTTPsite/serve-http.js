@@ -16,7 +16,7 @@ var server = http.createServer((request, response) => {
             throw err;
         console.log("Operation Success");
         // sending the response
-        res.end(data);
+        response.end(data);
     });
 });
 
