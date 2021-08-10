@@ -1,12 +1,28 @@
-// serve-html.js
-const http = require('http');
+//simple-server-in-nodejs.js
+var http = require('http');
 
-var server = http.createServer(
-    (request, response) => {
-        // change the MIME type from 'text/plain' to 'text/html'
-        response.setHeader('Content-Type', 'text/html');
-        response.end('Hello Node.js!');
+var host = '127.0.0.1'
+var port = 3000
+
+const fs = require('fs');
+
+var server = http.createServer((request, response) => {
+    // change the MIME type from 'text/plain' to 'text/html'
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    //reading the content file
+    fs.readFile(request.url, (err, data) => {
+        // checking for errors
+        if (err)
+            throw err;
+        console.log("Operation Success");
+        // sending the response
+        res.end(data);
+    });
+});
+
+server.listen(port, host, (error) => {
+    if (error) {
+        return console.log('Error occured : ', error );
     }
-);
-
-server.listen(3000, console.log('server start!'))
+    console.log('server is listening on ' + host + ':'+ port);
+});

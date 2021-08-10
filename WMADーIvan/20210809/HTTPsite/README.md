@@ -48,6 +48,7 @@ response.write('Hello');
 ```js
 response.end()
 ```
+> `.write()` + `.end()` = `.send()`
 ## Listen
 The waiting state is done by calling the method "listen" in `http.Server`. It specifies the "listening port number" as an argument.
 ```js
