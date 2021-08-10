@@ -38,12 +38,12 @@ app.get('/api/cpus', (req, res) => {
 
 app.get('/api/ram', (req, res) => {
   v = os.totalmem();
-  res.send(v);
+  res.send(v + '');
 })
 
 app.get('/api/diskspace', (req, res) => {
   v = os.freemem();
-  res.send(v);
+  res.send(v + '');
 })
 
 app.get('/api/hostname', (req, res) => {
