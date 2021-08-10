@@ -26,10 +26,9 @@
 const http = require('http');
 console.log(http);
 
-const server = http.createServer(
-  (req, res) => {
-  res.setHeader('Content-Type', 'text/html');
-  res.end('test');
-})
+function myCallback(rquest, result) {
+  // 200 is a http status message, just like 404? 200 says ok
+  result.writeHead(200, { 'Content-Type': 'text/html' });
+}
 
-server.listen(3000, console.log('server starts'));
+http.createServer(myCallback(request,result)).listen(8080);
