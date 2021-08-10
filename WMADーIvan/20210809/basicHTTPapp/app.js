@@ -24,6 +24,7 @@
 //  ----> shows ip address
 
 const http = require('http');
+console.log(http);
 
 const server = http.createServer(
   (req, res) => {
