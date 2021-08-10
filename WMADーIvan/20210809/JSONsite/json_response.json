@@ -1,0 +1,6 @@
+{
+  "status": 200, 
+  "message": "successful" , 
+  "result": [ "sunday" , "monday" , "tuesday" , "wednesday" ] , 
+  "code": 2000
+}

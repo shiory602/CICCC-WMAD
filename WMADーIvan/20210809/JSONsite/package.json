@@ -1,0 +1,12 @@
+{
+  "name": "jsonsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serve-json.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serve-json.js"
+  },
+  "author": "shiori",
+  "license": "ISC"
+}
