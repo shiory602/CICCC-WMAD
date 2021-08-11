@@ -1,16 +1,15 @@
 //simple-server-in-nodejs.js
 var http = require('http');
+const fs = require('fs');
 
 var host = '127.0.0.1'
 var port = 3000
-
-const fs = require('fs');
 
 var server = http.createServer((request, response) => {
     // change the MIME type from 'text/plain' to 'text/html'
     response.writeHead(200, {'Content-Type': 'text/html'});
     //reading the content file
-    fs.readFile(request.url, (err, data) => {
+    fs.readFile('index.html', (err, data) => {
         // checking for errors
         if (err)
             throw err;

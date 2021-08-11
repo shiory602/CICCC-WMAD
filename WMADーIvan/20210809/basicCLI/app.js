@@ -18,6 +18,7 @@ node yourapp.js -ip ----> shows ip address
 
 const os = require('os');
 const checkDiskSpace = require('check-disk-space').default;
+let GB = (1024*1024*1024);
 
 if (process.argv != "") {
   switch (process.argv[2]) {
@@ -28,7 +29,8 @@ if (process.argv != "") {
       console.log(os.cpus());
       break;
     case '-ram':
-      console.log(os.freemem() / os.totalmem());
+      console.log('RAM: ', os.totalmem() / GB, 'gigabytes');
+      console.log('Free RAM: ', os.freemem() / GB, 'gigabytes');
       break;
     case '-hdd':
       checkDiskSpace('/mnt/mygames').then((diskSpace) => {
