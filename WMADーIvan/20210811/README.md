@@ -32,5 +32,3 @@ show me an example md file
 
 md5 module: don't need it but can use it.
 change line 7&5 in md5 file.
-
-2:45
