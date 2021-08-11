@@ -14,8 +14,9 @@
 const express = require('express');
 var app = express();
 const os = require('os');
+// npm i check-disk-space
 const checkDiskSpace = require('check-disk-space').default;
-const GB = 1024 ** 3;
+let GB = (1024*1024*1024);
 
 app.get('/api', (req, res) => {
   res.send('Change the path.');
@@ -30,11 +31,22 @@ app.get('/api/cpus', (req, res) => {
 })
 
 app.get('/api/ram', (req, res) => {
-  res.send(os.totalmem() + '');
+  res.send(`
+    RAM: ${os.totalmem() / GB} GB,
+    Free RAM: ${os.freemem() / GB} GB
+  `);
 })
 
 app.get('/api/diskspace', (req, res) => {
-  res.send(os.freemem() + '');
+  res.send(checkDiskSpace('/mnt/mygames').then((diskSpace) => {
+    console.log(diskSpace)
+    // {
+    //     diskPath: '/',
+    //     free: 12345678,
+    //     size: 98756432
+    // }
+    // Note: `free` and `size` are in bytes
+  }));
 })
 
 app.get('/api/hostname', (req, res) => {
