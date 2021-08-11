@@ -14,6 +14,8 @@
 const express = require('express');
 var app = express();
 const os = require('os');
+const checkDiskSpace = require('check-disk-space').default;
+const GB = 1024 ** 3;
 
 app.get('/api', (req, res) => {
   res.send('Change the path.');

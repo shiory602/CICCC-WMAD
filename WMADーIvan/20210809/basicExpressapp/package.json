@@ -1,13 +1,13 @@
 {
   "name": "basicexpressapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "An application you can see the computer data by changing address be created with Express",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "shiori",
+  "author": "Shiori Suzuki",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
