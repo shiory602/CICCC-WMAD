@@ -22,3 +22,16 @@ Finding specific text using regular expression
 - g: global scope
 - i: case insensitive（大文字小文字の区別なし）
 - m: multiline match（複数行のマッチ）
+
+# Example
+
+/span/ every span
+
+/span class="sr/
+
+/*/ everything
+/a/ everything beginning with "a"
+/baby/ everything beginning with "baby"
+/*a/ everything end with "a"
+
+### /A-Z/gm

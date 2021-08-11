@@ -25,12 +25,14 @@
 
 const http = require('http');
 const os = require('os');
-// console.log(http);
+// npm i check-disk-space
+const checkDiskSpace = require('check-disk-space').default;
+let GB = (1024*1024*1024);
 
 function myCallback(request, result) {
   // 200 is a http status message, just like 404? 200 says ok
   result.writeHead(200, { 'Content-Type': 'text/html' });
-  // console.log(request.url);
+  console.log(request.url);
 
   if (request.url != "") {
     
@@ -42,16 +44,36 @@ function myCallback(request, result) {
         result.write(os.cpus());
         break;
       case '/api/ram':
-        result.write(os.totalmem());
+        console.log('RAM: ', os.totalmem() / GB, 'gigabytes');
+        console.log('Free RAM: ', os.freemem() / GB, 'gigabytes');
         break;
       case '/api/hdd':
-        result.write(os.freemem());
+        checkDiskSpace('/mnt/mygames').then((diskSpace) => {
+          console.log(diskSpace)
+          // {
+          //     diskPath: '/',
+          //     free: 12345678,
+          //     size: 98756432
+          // }
+          // Note: `free` and `size` are in bytes
+        })
         break;
       case '/api/hostname':
         result.write(os.hostname());
         break;
       case '/api/ip':
         result.write(os.networkInterfaces());
+        break;
+      default:
+        console.log(`
+        Choose command below
+        -arch
+        -cpu
+        -ram
+        -hdd
+        -hostname
+        -ip
+        `)
         break;
     }
   }
