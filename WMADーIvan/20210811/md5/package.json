@@ -1,0 +1,21 @@
+{
+  "name": "md5",
+  "version": "1.0.0",
+  "description": "Use crypto and md5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shiory602/CICCC-WMAD/blob/master/WMAD%E3%83%BCIvan/20210811/md5.js"
+  },
+  "keywords": [
+    "md5"
+  ],
+  "author": "Shiori Suzuki",
+  "license": "ISC",
+  "dependencies": {
+    "md5": "^2.3.0"
+  }
+}
