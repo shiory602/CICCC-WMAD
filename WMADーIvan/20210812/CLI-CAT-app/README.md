@@ -1,3 +1,7 @@
+# Meaning of some words
+[CAT](https://wa3.i-3-i.info/word11190.html): concatenate(連結する)、ファイルを連結するためのコマンド
+[CLI](https://wa3.i-3-i.info/word13118.html): Command Line Interface、全ての操作をキーボードだけですること
+
 # fs object
 The object which manipulate files is called "File System" object.
 [File System Module](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
