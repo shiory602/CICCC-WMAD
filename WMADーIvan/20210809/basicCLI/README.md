@@ -11,9 +11,9 @@ Use `os.arch()`
 - node yourapp.js -cpu ----> shows cpus
 Use `os.cpus()`
 - node yourapp.js -ram----> shows ram
-Use `os.totalmem()`
+Use `os.totalmem()` and `os.freemem()`
 - node yourapp.js -hdd----> shows disk space
-Couldn't find yet
+Instal [check-disk-space](https://www.npmjs.com/package/check-disk-space)
 - node yourapp.js -hostname ----> shows hostname
 Use `os.hostname()`
 - node yourapp.js -ip ----> shows ip address

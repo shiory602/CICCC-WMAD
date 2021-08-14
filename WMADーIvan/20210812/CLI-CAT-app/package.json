@@ -1,0 +1,19 @@
+{
+  "name": "cli-cat-app",
+  "version": "1.0.0",
+  "description": "Using Node.js, CLI-CAT app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CLI",
+    "CAT",
+    "Node"
+  ],
+  "author": "Shiori Suzuki",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
