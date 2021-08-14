@@ -127,7 +127,6 @@ fs.stat("mynewfile.txt", (error, fileSize) => {
 
 
 # Asynchronous and Synchronous
-どちらも指定した名前（第一引数）でファイルを作成
 ```js
 /*--- asynchronous ---*/
 fs.writeFile("mynewfile2.txt", "This is replaced by writeFile method.", (err) => {
