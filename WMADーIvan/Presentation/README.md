@@ -43,3 +43,6 @@ The following function is used to define routes in an Express application.
 method: METHOD can be applied to any one of the HTTP verbs — get, set, put, delete.
 path: The route at which the request will run.
 handler: A callback function that executes when a matching request type is found on the relevant route.
+
+
+https://docs.google.com/presentation/d/1nXT71JYJMTsKxeBt0D5bJlRyBZf5ALqXHOEFlMu5NfM/edit?usp=sharing
