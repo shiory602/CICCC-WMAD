@@ -1,29 +1,38 @@
 // 1. Write a function/polyfill for all objects to calculate their size.
-Object.prototype.getSize = function(obj) {
-  var size = 0,
-    key;
-  for (key in obj) {
-    if (obj.hasOwnProperty(key)) size++;
-  }
-  return size;
+Object.prototype.getSize = function() {
+  let obj = this;
+  return Object.keys(obj).length;
 };
-let object = { a : 1, b: 2, c: 3 }
-object.getSize(object) // Expected output 3
+let object = { a : 1, b: 2, c: 3 } // Expected output 3
+obj.size();
+// Object.prototype.getSize = function(obj) {
+//   var size = 0,
+//     key;
+//   for (key in obj) {
+//     if (obj.hasOwnProperty(key)) size++;
+//   }
+//   return size;
+// };
+// let object = { a : 1, b: 2, c: 3 }
+// object.getSize(object) // Expected output 3
+
+
+
 
 // 2. Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes.
 // Note: Volume of a cylinder : V = πr2h
-function Cylinder (){
-  this.h = height;
-  
-  Cylinder.prototype.Volume = function () {
-    var radius = this.cyl_diameter / 2;
-    return this.cyl_height * Math.PI * radius * radius;
-  };
-  
-  var cyl = new Cylinder(7, 4);
-  // Volume of the cylinder with four decimal places.
-  console.log('volume =', cyl.Volume().toFixed(4));
+class Cylinder {
+  constructor(radius, height) {
+    this.radius = radius;
+    this.height = height;
+  }
+  getVolume() {
+    return Math.PI * (this.radius ** 2) * this.height.toFixed(4);
+  }
 }
+let cl = new Cylinder(10, 20)
+cl.getVolume()
+
 
 
 
@@ -62,6 +71,15 @@ const printsNums = () => {
     console.log(num);
   }, 1000)
 }
+
+function print10() {
+  for (let i = 1; i <= 10; i++) {
+    setTimeout(() => {
+      console.log(i);
+    }, i + 1000)
+  }
+}
+print10();
 
 
 // ************ OUTPUT BASED QUESTIONS *******************

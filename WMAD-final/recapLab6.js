@@ -33,7 +33,7 @@ const matrixDiagonalSum = () => {
   let diagona2 = 0;
   for (let row = 0; row < 3; row++) {
     diagona1 += matrix[row][row];
-    diagona2 += matrix[row][matrix.length -row - 1];
+    diagona2 += matrix[row][matrix.length - row - 1];
   }
   // diagona1 + diagona2 = 30;
   // return diagona1 - diagona2 - 5 = 25
@@ -48,8 +48,19 @@ console.log(matrixDiagonalSum(matrix));
 
 // 3) Given a string. Count the number of Camel Case characters in it.
 var S = "ckjkUUYII" // Expected Output:  [4, 5]
+let countL = 0;
+let countU = 0;
 const countChara = (s) => {
-
+  for(let i　= 0; i < S.length; i++) {
+    console.log(s[i])
+    if(s.match(/^[A-Z]+$/g)) {
+      countL++;
+    }
+    if(s.match(/^[a-z]+$/g)) {
+      countU++;
+    }
+  }
+  return [countL, countU];
 }
 console.log(countChara(S));
 
