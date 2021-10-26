@@ -1,0 +1,65 @@
+body {
+  background-color: gray;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: white;
+  width: 60vw;
+  margin: 20px auto;
+  padding: 25px;
+  &:hover {
+    background-color: red;
+  }
+
+  .main {
+    display: flex;
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+      background-color: yellowgreen;
+    }
+
+    .title {
+      width: 80%;
+      background-color: pink;
+    }
+  }
+
+  .sub {
+    .tag {
+      background-color: blue;
+    }
+  }
+}
+
+.line {
+  height: 13px;
+  padding: 0 15px;
+  margin: 0 44px 13px;
+  text-align: center;
+
+  // border-bottom: 1px solid #000;
+
+  position: relative; // start point
+  &::after {
+    content: '';
+    display: block;
+    position: absolute; // relativeを地点にしての位置
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rebeccapurple;
+  }
+}
+
+// tablet
+// @media (min-width: 768px) {
+//   margin: auto;
+// }

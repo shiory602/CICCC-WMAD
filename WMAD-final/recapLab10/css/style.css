@@ -1,0 +1,59 @@
+body {
+  background-color: gray;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: white;
+  width: 60vw;
+  margin: 20px auto;
+  padding: 25px;
+}
+
+.container:hover {
+  background-color: red;
+}
+
+.container .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .main .icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background-color: yellowgreen;
+}
+
+.container .main .title {
+  width: 80%;
+  background-color: pink;
+}
+
+.container .sub .tag {
+  background-color: blue;
+}
+
+.line {
+  height: 13px;
+  padding: 0 15px;
+  margin: 0 44px 13px;
+  text-align: center;
+  position: relative;
+}
+
+.line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rebeccapurple;
+}
+/*# sourceMappingURL=style.css.map */
