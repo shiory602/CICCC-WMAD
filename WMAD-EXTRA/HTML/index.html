@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="en">
+    <title>HTML Assignment</title>
+
+    <style>
+      body {
+        border: 3px solid black;
+        padding: 10px;
+        font-weight: 700;
+        text-align: center;
+      }
+      header {
+        width: 90%;
+        height: 40px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        border: 3px solid black;
+        float: left;
+        padding: 10px 25px;
+      }
+      
+      .menu {
+        float: right;
+        display: flex;
+        margin: 0 auto;
+      }
+      .menu > li {
+        /* display: inline; */
+        border: 3px solid black;
+        flex-direction: row;
+        list-style: none;
+        margin: 5px 10px;
+      }
+      
+      .main_banner {
+        border: 3px solid black;
+        height: 300px;
+        width: 90%;
+        margin: 15px auto;
+      }
+      
+      .articles {
+        display: flex;
+        justify-content: space-around;
+      }
+      .article1, .article2, .article3 {
+        border: 3px solid black;
+        width: 20%;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo"> logo </div>
+      <ul class="menu">
+        <li>Home</li>
+        <li>Articles</li>
+        <li>Contact</li>
+      </ul>
+    </header>
+    <main>
+      <div class="main_banner"> main banner </div>
+      <div class="articles">
+        <article class="article1"> article1 </article>
+        <article class="article2"> article2 </article>
+        <article class="article3"> article3 </article>
+      </div>
+    </main>
+  </body>
+</html>
