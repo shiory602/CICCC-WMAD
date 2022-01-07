@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="data">
+        <div class="form_name">
+          <label for="inputName">Name:</label>
+          <input type="text"　id="inpuyName" name="inputName">
+        </div>
+        <div class="form_email">
+          <label for="email">Email:</label>
+          <input type="text"　id="email" name="email">
+        </div>
+        <div class="form_college">
+          <label for="college">College:</label>
+          <input type="text"　id="college" name="college">
+        </div>
+        <button type="submit" class="btn" id="submit">Submit</button>
+      </form>
+    </div>
+    <div class="table-container">
+      <h3>TABLE</h3>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>College</th>
+        </tr>
+        <tr id="tdata">
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="./form.js"></script>
+  </body>
+</html>

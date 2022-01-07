@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.form-container, .table-container {
+  width: 500px;
+  margin: 20px auto;
+  border: 3px solid black;
+  text-align: center;
+}
+.form_name, .form_email, .form_college {
+  margin: 10px;
+}
+.btn {
+  margin: 15px;
+  padding: 5px 15px;
+  box-shadow: 0 3px gray;
+  cursor: pointer;
+}
+.btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+table {
+  width: 100%;
+}
