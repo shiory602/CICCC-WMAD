@@ -2,8 +2,9 @@ let inputName = document.getElementById("inputName");
 let inputEmail = document.getElementById("email");
 let inputCollege = document.getElementById("college");
 
+const btn = document.querySelector("button");
 
-submit.addEventListener("submit", (e)=> {
+btn.addEventListener("click", (e)=> {
   console.log("submitted!")
   e.preventDefault();
   if(!inputName.value || !inputEmail.value || !inputCollege.value) {
