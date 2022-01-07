@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .calendar-container {
+      margin: 0 auto;
+      width: 500px;
+      box-shadow: 3px 3px .3em black;
+      border-radius: 10px;
+    }
+    h1 {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      font-size: 32px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      margin: 0;
+    }
+    .calendar {
+      padding: 0 20px 20px 20px;
+    }
+    table {
+      width: 100%;
+    }
+    th, td {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .week {
+      background-color: rgba(0, 0, 0, .6);
+      color: white;
+    }
+    .today {
+      background-color: tomato;
+      border: tomato;
+      border-radius: 50%;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar-container">
+    <h1>Calendar</h1>
+    <table class="calendar">
+      <tr class="week">
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+        <th>SUN</th>
+      </tr>
+      <tr class="date">
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+      <tr class="date">
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td class="today">14</td>
+      </tr>
+      <tr class="date">
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+      </tr>
+      <tr class="date">
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+      </tr>
+      <tr class="date">
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
